@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:\Users\Avidly\Desktop\work\codes\sdk_2.0\AdSdkDemo-Studio-master\AdSdkDemo-Studio-master\AdSdkDemo-Studio.iml" filepath="C:\Users\Avidly\Desktop\work\codes\sdk_2.0\AdSdkDemo-Studio-master\AdSdkDemo-Studio-master\AdSdkDemo-Studio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UPAdsSdk_Sample_3005_AS.iml" filepath="$PROJECT_DIR$/UPAdsSdk_Sample_3005_AS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
