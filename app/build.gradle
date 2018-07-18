@@ -8,9 +8,14 @@ android {
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3005
+        versionName "3.0.0.5"
         multiDexEnabled true
+    }
+    dexOptions {
+        preDexLibraries false
+        incremental false
+        javaMaxHeapSize "3072m"
     }
 
     signingConfigs {
@@ -79,8 +84,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:customtabs:26.1.0'
     compile 'com.google.android.gms:play-services-ads:15.0.1'
-
-
 
 }

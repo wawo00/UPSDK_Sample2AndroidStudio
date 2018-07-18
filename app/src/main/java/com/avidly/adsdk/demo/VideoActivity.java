@@ -50,7 +50,7 @@ public class VideoActivity extends Activity {
 				// code
 				// 激励视屏加载失败，请等待加载成功
 				Log.i(TAG, "video load failed: ");
-
+				Toast.makeText(VideoActivity.this, "广告还没准备好", Toast.LENGTH_LONG).show();
 			}
 
 			@Override
@@ -63,28 +63,17 @@ public class VideoActivity extends Activity {
 			@Override
 			public void onVideoAdClicked() {
 				// 此处为广告点击的回调
+				Log.i(TAG, "onVideoAdClicked: ");
 			}
 
 			@Override
 			public void onVideoAdClosed() {
+				Log.i(TAG, "onVideoAdClosed: ");
 				// 此处为广告关闭的回调
 				if (mVideoAd.isReady()) {
-					new Handler(getMainLooper()).post(new Runnable() {
-						@Override
-						public void run() {
-							final AlertDialog.Builder builder = new AlertDialog.Builder(VideoActivity.this);
-							builder.setTitle("Game Over");
-							builder.setMessage("再看一个, +300 coins");
-							builder.setNegativeButton("开始", new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									showAd();
-								}
-							});
-							builder.show();
-						}
-					});
+					mVideoAd.show("rewardvideo");
 				} else {
+					Toast.makeText(VideoActivity.this, "广告还没准备好", Toast.LENGTH_LONG).show();
 					btnVideo.setEnabled(false);
 				}
 			}
@@ -92,6 +81,7 @@ public class VideoActivity extends Activity {
 			@Override
 			public void onVideoAdDisplayed() {
 				// 此处为广告展示的回调
+				Log.i(TAG, "onVideoAdDisplayed: ");
 			}
 
 			@Override
@@ -121,12 +111,10 @@ public class VideoActivity extends Activity {
 				btnPlay.setText("游戏中 ... ...");
 				btnPlay.setEnabled(false);
 				btnVideo.setEnabled(false);
-
 				new Handler(getMainLooper()).postDelayed(new Runnable() {
 					@Override
 					public void run() {
 						gameOver();
-
 					}
 				}, 10 * 1000);
 			}
@@ -135,18 +123,7 @@ public class VideoActivity extends Activity {
 		btnVideo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				btnPlay.setText("开始游戏");
 
-				final AlertDialog.Builder builder = new AlertDialog.Builder(VideoActivity.this);
-				builder.setTitle("Game Over");
-				builder.setMessage("看视频拿奖励, +300 coins");
-				builder.setNegativeButton("开始", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						showAd();
-					}
-				});
-				builder.show();
 			}
 		});
 
@@ -171,37 +148,25 @@ public class VideoActivity extends Activity {
 	private void gameOver() {
 		btnPlay.setText("游戏结束");
 		btnPlay.setEnabled(true);
-		new MyThread().start();
-		btnVideo.setEnabled(true);
+//		new MyThread().start();
 		if (mVideoAd.isReady()) {
-			btnVideo.setEnabled(true);
-//		else {
-//			Toast.makeText(this, "视频广告没有加载成功", Toast.LENGTH_SHORT).show();
-//			btnVideo.setEnabled(false);
-//		}
-		}
-	}
-
-	private void showAd() {
-		if (mVideoAd.isReady()) {
-			mVideoAd.show("game");
+			mVideoAd.show("rewardvideo");
 		} else {
 			Toast.makeText(VideoActivity.this, "广告还没准备好", Toast.LENGTH_LONG).show();
 		}
 	}
-
-	class MyThread extends Thread {
-		public void run() {
-			for (int i = 0; i < 1000; i++) {
-
-				try {
-					Thread.sleep(1000);
-					mVideoAd.isReady();
-					Log.i("<aly","运行了 "+i+" 次");
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
+//	class MyThread extends Thread {
+//		public void run() {
+//			for (int i = 0; i < 1000; i++) {
+//
+//				try {
+//					Thread.sleep(1000);
+//					mVideoAd.isReady();
+//					Log.i("<aly","运行了 "+i+" 次");
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+//	}
 }

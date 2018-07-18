@@ -8,14 +8,16 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.avidly.ads.AvidlyAdsSdk;
+import com.avidly.adsdk.demo.util.VersionUtil;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 
 public class MainActivity extends Activity {
 	private static final String TAG = "AdsSdk_demo";
-
+     TextView tv_version;
 	Button btnVideo;
 	Button btnBanner;
 	Button btnInterstitial;
@@ -30,10 +32,15 @@ public class MainActivity extends Activity {
 		//方法一 用户自己检查GDPR
 //		initUpAdsSdk();
 
+
+		//设置customid
+		UPAdsSdk.setCustomerId("66666666666666666666666666");
+
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
 		initUpAdsSdk(result);
-
+		tv_version= (TextView)findViewById(R.id.tv_version);
+		tv_version.setText(VersionUtil.getVersionName(this));
 		btnBanner = (Button) findViewById(R.id.btnBanner);
 		btnBanner.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -148,12 +155,15 @@ public class MainActivity extends Activity {
 	   }
    };
 
-
+	/**
+	 * 初始化sdk
+	 * 初始化abtest
+	 * 初始化GDPR
+	 */
 	 public void initSdkAndGDPR()
 	 {
 		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneAuto);
 		 UPAdsSdk.initAbtConfigJson("wt_8080", true, 100, "avidly", "M", 80, new String[]{"tag1", "tag2"});
-
 	 }
 
 }
