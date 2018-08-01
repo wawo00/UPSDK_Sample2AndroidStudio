@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
@@ -18,10 +19,10 @@ import com.up.ads.tool.AccessPrivacyInfoManager;
 public class MainActivity extends Activity {
 	private static final String TAG = "AdsSdk_demo";
      TextView tv_version;
-	Button btnVideo;
+	Button btnRwardVideo;
 	Button btnBanner;
 	Button btnInterstitial;
-	Button btnExit;
+	Button btnExit,btnGetAbTest;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
 
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
+
 		initUpAdsSdk(result);
 		tv_version= (TextView)findViewById(R.id.tv_version);
 		tv_version.setText(VersionUtil.getVersionName(this));
@@ -54,13 +56,16 @@ public class MainActivity extends Activity {
 		btnInterstitial.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, InterstitialActivity.class);
+//				Intent intent = new Intent(MainActivity.this, InterstitialActivity.class);
+				Intent intent = new Intent(MainActivity.this, MyInterstitialActivity.class);
+
 				startActivity(intent);
+
 			}
 		});
 
-		btnVideo = (Button) findViewById(R.id.btnVideo);
-		btnVideo.setOnClickListener(new View.OnClickListener() {
+		btnRwardVideo = (Button) findViewById(R.id.btnRwardVideo);
+		btnRwardVideo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this, VideoActivity.class);
@@ -74,6 +79,16 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this, ExitActivity.class);
 				startActivity(intent);
+			}
+		});
+
+		btnGetAbTest=findViewById(R.id.btnGetAbTest);
+		btnGetAbTest.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String abtestResult0=	 UPAdsSdk.getAbtConfigString("dld_android_placement_0");
+				String abtestResult1=	 UPAdsSdk.getAbtConfigString("dld_android_placement_1");
+				Log.i(TAG, "abtestResult0 : "+abtestResult0+" ----abtestResult1: "+abtestResult1);
 			}
 		});
 	}
@@ -162,8 +177,9 @@ public class MainActivity extends Activity {
 	 */
 	 public void initSdkAndGDPR()
 	 {
-		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneAuto);
+		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneDomestic);
 		 UPAdsSdk.initAbtConfigJson("wt_8080", true, 100, "avidly", "M", 80, new String[]{"tag1", "tag2"});
+
 	 }
 
 }

@@ -4,7 +4,8 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "com.aaa.bbb.ccc"
+//        applicationId "com.upltv.adsdk.demo"
+        applicationId "com.modx.daluandou"
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 26
@@ -82,9 +83,10 @@ dependencies {
     compile(name: 'gson-2.7', ext: 'jar')
     compile 'com.android.support:support-v4:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
+//    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:customtabs:26.1.0'
+//    compile 'com.android.support:customtabs:26.1.0'
     compile 'com.google.android.gms:play-services-ads:15.0.1'
 
 }
+

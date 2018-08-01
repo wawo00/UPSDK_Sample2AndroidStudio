@@ -41,7 +41,6 @@ public class VideoActivity extends Activity {
 		coin = (TextView) findViewById(R.id.coin);
 		mBtnDebugView = (Button) findViewById(R.id.btnDebugView);
 
-		btnVideo.setEnabled(false);
 		coins = 0;
 		mVideoAd = UPRewardVideoAd.getInstance(this);
 		mVideoAd.load(new UPRewardVideoLoadCallback() {
@@ -69,13 +68,7 @@ public class VideoActivity extends Activity {
 			@Override
 			public void onVideoAdClosed() {
 				Log.i(TAG, "onVideoAdClosed: ");
-				// 此处为广告关闭的回调
-				if (mVideoAd.isReady()) {
-					mVideoAd.show("rewardvideo");
-				} else {
-					Toast.makeText(VideoActivity.this, "广告还没准备好", Toast.LENGTH_LONG).show();
-					btnVideo.setEnabled(false);
-				}
+				// 此处为广告关闭的
 			}
 
 			@Override
@@ -109,8 +102,6 @@ public class VideoActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				btnPlay.setText("游戏中 ... ...");
-				btnPlay.setEnabled(false);
-				btnVideo.setEnabled(false);
 				new Handler(getMainLooper()).postDelayed(new Runnable() {
 					@Override
 					public void run() {
@@ -123,7 +114,11 @@ public class VideoActivity extends Activity {
 		btnVideo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
+				if (mVideoAd.isReady()) {
+					mVideoAd.show("rewardvideo");
+				} else {
+					Toast.makeText(VideoActivity.this, "广告还没准备好", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 
@@ -146,13 +141,13 @@ public class VideoActivity extends Activity {
 	}
 
 	private void gameOver() {
-		btnPlay.setText("游戏结束");
+		btnPlay.setText("GAME OVER");
 		btnPlay.setEnabled(true);
 //		new MyThread().start();
 		if (mVideoAd.isReady()) {
-			mVideoAd.show("rewardvideo");
+			Toast.makeText(VideoActivity.this, "ads ready", Toast.LENGTH_LONG).show();
 		} else {
-			Toast.makeText(VideoActivity.this, "广告还没准备好", Toast.LENGTH_LONG).show();
+			Toast.makeText(VideoActivity.this, "ads not ready", Toast.LENGTH_LONG).show();
 		}
 	}
 //	class MyThread extends Thread {

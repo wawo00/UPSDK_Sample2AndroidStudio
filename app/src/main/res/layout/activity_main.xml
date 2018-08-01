@@ -26,7 +26,7 @@
         android:text="插屏广告" />
 
     <Button
-        android:id="@+id/btnVideo"
+        android:id="@+id/btnRwardVideo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -39,4 +39,10 @@
         android:layout_margin="16dp"
         android:text="退出广告" />
 
+    <Button
+        android:id="@+id/btnGetAbTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="获得Abtest数据" />
 </LinearLayout>
