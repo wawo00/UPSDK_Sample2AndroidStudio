@@ -6,6 +6,7 @@ android {
     defaultConfig {
 //        applicationId "com.upltv.adsdk.demo"
         applicationId "com.modx.daluandou"
+        applicationId "com.aaa.bbb.ccc"
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 26
@@ -46,6 +47,7 @@ repositories {
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
     //core-lib
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     compile(name: 'UPAdsSdk_3.0.05', ext: 'aar')
     //networks
     compile(name: 'adcolony_ads', ext: 'aar')
@@ -88,5 +90,8 @@ dependencies {
 //    compile 'com.android.support:customtabs:26.1.0'
     compile 'com.google.android.gms:play-services-ads:15.0.1'
 
+// not importent
+    compile 'com.android.support:design:26.0.0-alpha1'
 }
+
 

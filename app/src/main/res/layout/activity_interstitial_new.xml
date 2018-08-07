@@ -205,7 +205,7 @@
 
     <GridView
         android:id="@+id/gv_root"
-        android:numColumns="3"
+        android:numColumns="2"
         android:horizontalSpacing="5dp"
         android:verticalSpacing="5dp"
         android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.avidly.adsdk.demo;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
+import com.ironsource.mediationsdk.IronSource;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 
@@ -22,7 +24,7 @@ public class MainActivity extends Activity {
 	Button btnRwardVideo;
 	Button btnBanner;
 	Button btnInterstitial;
-	Button btnExit,btnGetAbTest;
+	Button btnExit,btnGetAbTest,btnShowDebug;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,9 @@ public class MainActivity extends Activity {
 			}
 		});
 
+		IronSource.init(this,"2121");
+
+
 		btnRwardVideo = (Button) findViewById(R.id.btnRwardVideo);
 		btnRwardVideo.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -89,6 +94,13 @@ public class MainActivity extends Activity {
 				String abtestResult0=	 UPAdsSdk.getAbtConfigString("dld_android_placement_0");
 				String abtestResult1=	 UPAdsSdk.getAbtConfigString("dld_android_placement_1");
 				Log.i(TAG, "abtestResult0 : "+abtestResult0+" ----abtestResult1: "+abtestResult1);
+			}
+		});
+		btnShowDebug=findViewById(R.id.btnShowDebug);
+		btnShowDebug.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(MainActivity.this,ShowDebugActivity.class));
 			}
 		});
 	}
