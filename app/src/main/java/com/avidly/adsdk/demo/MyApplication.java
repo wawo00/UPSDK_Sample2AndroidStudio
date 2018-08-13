@@ -15,11 +15,13 @@ public class MyApplication extends Application {
 
     @Override
     protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            MultiDex.install(this);
+            MultiDex.install(base);
         }
+        super.attachBaseContext(base);
+
+
     }
 
     @Override
