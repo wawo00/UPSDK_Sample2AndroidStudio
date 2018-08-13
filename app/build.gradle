@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
 //        applicationId "com.upltv.adsdk.demo"
-        applicationId "com.aaa.bbb.ccc"
+        applicationId "com.holaverse.holagames.wt"
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 26
@@ -46,7 +46,6 @@ repositories {
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
     //core-lib
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     compile(name: 'UPAdsSdk_3.0.05', ext: 'aar')
     //networks
     compile(name: 'adcolony_ads', ext: 'aar')
@@ -58,7 +57,6 @@ dependencies {
     compile(name: 'centrixlink_ads', ext: 'aar')
     compile(name: 'chartboost_ads', ext: 'aar')
     compile(name: 'domob_ads', ext: 'aar')
-    compile(name: 'facebook_ads', ext: 'aar')
     compile(name: 'inmobi_ads', ext: 'aar')
     compile(name: 'ironsource_ads', ext: 'aar')
     compile(name: 'maio_ads', ext: 'aar')
@@ -87,7 +85,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.android.support:customtabs:26.1.0'
-    compile 'com.google.android.gms:play-services:12+'
+//    compile 'com.google.android.gms:play-services:12+'  //会冲突
     compile 'com.google.android.gms:play-services-ads:15.0.1'
 
 
