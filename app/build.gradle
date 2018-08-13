@@ -5,12 +5,12 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
 //        applicationId "com.upltv.adsdk.demo"
-        applicationId "com.aaa.bbb.ccc"
+            applicationId "com.aaa.bbb.ccc"
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 3005
-        versionName "3.0.0.5"
+        versionCode 3004
+        versionName "3.0.0.4"
         multiDexEnabled true
     }
     dexOptions {
@@ -46,8 +46,7 @@ repositories {
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
     //core-lib
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    compile(name: 'UPAdsSdk_3.0.05', ext: 'aar')
+    compile(name: 'UPAdsSdk_3.0.04', ext: 'aar')
     //networks
     compile(name: 'adcolony_ads', ext: 'aar')
     compile(name: 'amazon_ads', ext: 'aar')
@@ -75,9 +74,9 @@ dependencies {
     compile(name: 'facebook_exo_player', ext: 'aar')
     compile(name: 'facebook_ads', ext: 'aar')
     //头条
-    compile(name: 'toutiao_ads', ext: 'aar')
-    compile(name: 'toutiao_ads_sdk', ext: 'aar')
-    compile(name: 'android-gif-drawable', ext: 'aar')
+//    compile(name: 'toutiao_ads', ext: 'aar')
+//    compile(name: 'toutiao_ads_sdk', ext: 'aar')
+//    compile(name: 'android-gif-drawable', ext: 'aar')
 
 //support-libs
 //    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
@@ -87,8 +86,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.android.support:customtabs:26.1.0'
-    compile 'com.google.android.gms:play-services:12+'
-    compile 'com.google.android.gms:play-services-ads:15.0.1'
+    compile 'com.google.android.gms:play-services:12.0.1'
+//    compile 'com.google.android.gms:play-services-ads:15.0.1'
 
 
 // not importent

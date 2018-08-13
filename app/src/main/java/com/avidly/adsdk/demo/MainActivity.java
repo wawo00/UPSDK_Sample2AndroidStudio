@@ -35,7 +35,6 @@ public class MainActivity extends Activity {
 		//方法一 用户自己检查GDPR
 //		initUpAdsSdk();
 
-
 		//设置customid
 		UPAdsSdk.setCustomerId("66666666666666666666666666");
 
