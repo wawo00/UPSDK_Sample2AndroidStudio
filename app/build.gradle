@@ -4,9 +4,8 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-//        applicationId "com.upltv.adsdk.demo"
-            applicationId "com.aaa.bbb.ccc"
-//        applicationId "coin.dozer.arcadegame.free.casino"
+        applicationId "com.upltv.adsdk.demo"
+//        applicationId "com.parthenon.space"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 3004
