@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		IronSource.init(this,"2121");
+//		IronSource.init(this,"2121");
 
 
 		btnRwardVideo = (Button) findViewById(R.id.btnRwardVideo);

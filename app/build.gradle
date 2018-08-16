@@ -4,8 +4,9 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-//        applicationId "com.upltv.adsdk.demo"
-        applicationId "com.holaverse.holagames.wt"
+        applicationId "com.upltv.adsdk.demo"
+//        applicationId "com.holaverse.holagames.wt"
+//        applicationId ""
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 26
