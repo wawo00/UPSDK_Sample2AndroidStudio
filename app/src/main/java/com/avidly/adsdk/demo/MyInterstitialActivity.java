@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.up.ads.UPInterstitialAd;
+import com.up.ads.wrapper.interstitial.UPInterstitialAdListener;
 import com.up.ads.wrapper.interstitial.UPInterstitialLoadCallback;
 
 import java.nio.file.Files;
@@ -62,6 +63,24 @@ public class MyInterstitialActivity extends Activity {
             };
 
             upInterstitialAd.load(callback);
+            upInterstitialAd.setUpInterstitialAdListener(new UPInterstitialAdListener() {
+                @Override
+                public void onClicked() {
+                    Log.i(TAG, "InterstitialAd "  + " onClicked:");
+                }
+
+                @Override
+                public void onClosed() {
+                    Log.i(TAG, "InterstitialAd "  + " onClosed:");
+                }
+
+                @Override
+                public void onDisplayed() {
+                    Log.i(TAG, "InterstitialAd "  + " onDisplayed:");
+                }
+            });
+
+
         }
      gvRoot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
          @Override
@@ -69,7 +88,7 @@ public class MyInterstitialActivity extends Activity {
             if (UPInterstitialAds.get(i)!=null&&UPInterstitialAds.get(i).isReady()){
                 UPInterstitialAds.get(i).show();
             }else{
-                Toast.makeText(MyInterstitialActivity.this,"inter广告没有准备好",0).show();
+                Toast.makeText(MyInterstitialActivity.this,"inter广告没有准备好",Toast.LENGTH_SHORT).show();
             }
          }
      });

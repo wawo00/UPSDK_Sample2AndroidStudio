@@ -74,9 +74,9 @@ dependencies {
     compile(name: 'facebook_exo_player', ext: 'aar')
     compile(name: 'facebook_ads', ext: 'aar')
     //头条
-    compile(name: 'toutiao_ads', ext: 'aar')
-    compile(name: 'toutiao_ads_sdk', ext: 'aar')
-    compile(name: 'android-gif-drawable', ext: 'aar')
+//    compile(name: 'toutiao_ads', ext: 'aar')
+//    compile(name: 'toutiao_ads_sdk', ext: 'aar')
+//    compile(name: 'android-gif-drawable', ext: 'aar')
 
 //support-libs
 //    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
