@@ -1,23 +1,16 @@
-package com.avidly.adsdk.demo;
+package com.upltv.adsdk.demo;
 
 import android.app.Activity;
-import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.avidly.ads.AvidlyAdsSdk;
-import com.avidly.adsdk.demo.util.VersionUtil;
 import com.ironsource.mediationsdk.IronSource;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
-
 public class MainActivity extends Activity {
 	private static final String TAG = "AdsSdk_demo";
      TextView tv_version;

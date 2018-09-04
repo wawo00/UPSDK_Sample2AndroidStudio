@@ -1,4 +1,4 @@
-package com.avidly.adsdk.demo.util;
+package com.upltv.adsdk.demo;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

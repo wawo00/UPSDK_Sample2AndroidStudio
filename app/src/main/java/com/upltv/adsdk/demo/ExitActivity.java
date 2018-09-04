@@ -1,8 +1,7 @@
-package com.avidly.adsdk.demo;
+package com.upltv.adsdk.demo;
 
 import com.avidly.ads.AvidlyExitAd;
 import com.avidly.ads.wrapper.exit.AvidlyExitAdListener;
-import com.avidly.adsdk.demo.R;
 
 import android.app.Activity;
 import android.os.Bundle;

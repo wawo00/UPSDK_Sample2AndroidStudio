@@ -1,9 +1,8 @@
-package com.avidly.adsdk.demo;
+package com.upltv.adsdk.demo;
 
 import com.avidly.ads.AvidlyBannerAd;
 import com.avidly.ads.AvidlyRectangleAd;
 import com.avidly.ads.wrapper.banner.AvidlyBannerAdListener;
-import com.avidly.adsdk.demo.R;
 import com.up.ads.wrapper.banner.UPBannerAdListener;
 import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
 
@@ -12,8 +11,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.widget.LinearLayout;
-
 public class BannerActivity extends Activity {
 	private static final String TAG = "AdsSdk_demo";
 	@Override

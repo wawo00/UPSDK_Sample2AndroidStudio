@@ -1,8 +1,5 @@
-package com.avidly.adsdk.demo;
+package com.upltv.adsdk.demo;
 
-import com.avidly.ads.AvidlyInterstitialAd;
-import com.avidly.ads.wrapper.interstitial.AvidlyInterstitialAdListener;
-import com.avidly.adsdk.demo.R;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.UPInterstitialAd;
 import com.up.ads.wrapper.interstitial.UPInterstitialLoadCallback;

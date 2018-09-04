@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.avidly.adsdk.demo">
+    package="com.upltv.adsdk.demo">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
@@ -35,16 +35,21 @@
             android:name=".VideoActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:exported="true"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity
             android:name=".BannerActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity
             android:name=".InterstitialActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:exported="true"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity
             android:name=".ExitActivity"
@@ -55,6 +60,7 @@
             android:name=".MyInterstitialActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity android:name=".ShowDebugActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
