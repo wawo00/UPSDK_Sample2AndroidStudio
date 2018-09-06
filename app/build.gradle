@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.upltv.adsdk.demo"
-//        applicationId "com.parthenon.space"
+//        applicationId "com.dc.hwsj"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 3004
@@ -76,6 +76,12 @@ dependencies {
 //    compile(name: 'toutiao_ads', ext: 'aar')
 //    compile(name: 'toutiao_ads_sdk', ext: 'aar')
 //    compile(name: 'android-gif-drawable', ext: 'aar')
+
+    //dap
+    compile(name: 'dap_ads', ext: 'aar')
+    compile(name: 'dap_ads_cw', ext: 'aar')
+    compile(name: 'dap_ads_vd', ext: 'aar')
+    compile(name: 'palette-v7-26.1.0', ext: 'aar')
 
 //support-libs
 //    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
