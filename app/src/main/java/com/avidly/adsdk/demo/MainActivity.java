@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
 
 		//设置customid
-		UPAdsSdk.setCustomerId("66666666666666666666666666");
+//		UPAdsSdk.setCustomerId("66666666666666666666666666");
 
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
@@ -189,7 +189,7 @@ public class MainActivity extends Activity {
 	 */
 	 public void initSdkAndGDPR()
 	 {
-		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneDomestic);
+		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneForeign);
 		 UPAdsSdk.initAbtConfigJson("wt_8080", true, 100, "avidly", "M", 80, new String[]{"tag1", "tag2"});
 
 	 }
