@@ -13,6 +13,9 @@ android {
         versionCode 3005
         versionName "3.0.0.5"
         multiDexEnabled true
+        ndk {
+                abiFilters 'armeabi-v7a'
+            }
     }
     dexOptions {
         preDexLibraries false
