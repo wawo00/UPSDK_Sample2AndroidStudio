@@ -4,8 +4,8 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "com.upltv.adsdk.demo"
-//        applicationId "com.dc.hwsj"
+//        applicationId "com.upltv.adsdk.demo"
+        applicationId "com.epic.slots.casino.vegas.amazon.avidly"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 3004
@@ -47,7 +47,7 @@ dependencies {
     //core-lib
     compile(name: 'UPAdsSdk_3.0.04', ext: 'aar')
     //networks
-    compile(name: 'adcolony_ads', ext: 'aar')
+    compile(name: 'adcolony_ads_335', ext: 'aar')
     compile(name: 'amazon_ads', ext: 'aar')
     compile(name: 'applovin_ads', ext: 'aar')
     compile(name: 'appnext_ads', ext: 'aar')
