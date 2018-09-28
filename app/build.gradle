@@ -2,10 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "com.candy.world.crush.jam.free"
+//        applicationId "com.candy.world.crush.jam.free"
 //        applicationId "com.holaverse.holagames.wt"
+        applicationId "com.epic.slots.casino.vegas.amazon.avidly"
 //        applicationId ""
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
@@ -35,7 +36,7 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            minifyEnabled true
+//            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -52,7 +53,7 @@ dependencies {
     //core-lib
     compile(name: 'UPAdsSdk_3.0.05_fixGDPR', ext: 'aar')
     //networks
-    compile(name: 'adcolony_ads', ext: 'aar')
+    compile(name: 'adcolony_ads_335', ext: 'aar')
     compile(name: 'amazon_ads', ext: 'aar')
     compile(name: 'applovin_ads', ext: 'aar')
     compile(name: 'appnext_ads', ext: 'aar')

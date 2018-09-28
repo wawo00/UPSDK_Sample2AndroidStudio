@@ -91,8 +91,8 @@ public class MainActivity extends Activity {
 		btnGetAbTest.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				String abtestResult0=	 UPAdsSdk.getAbtConfigString("dld_android_placement_0");
-				String abtestResult1=	 UPAdsSdk.getAbtConfigString("dld_android_placement_1");
+				String abtestResult0=	 UPAdsSdk.getAbtConfigString("ad_hp");
+				String abtestResult1=	 UPAdsSdk.getAbtConfigString("ad_hp");
 				Log.i(TAG, "abtestResult0 : "+abtestResult0+" ----abtestResult1: "+abtestResult1);
 			}
 		});
