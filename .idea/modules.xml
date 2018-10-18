@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Avidly\Desktop\work\codes\sdk_2.0\AdSdkDemo-Studio-master\AdSdkDemo-Studio-master\AdSdkDemo-Studio.iml" filepath="C:\Users\Avidly\Desktop\work\codes\sdk_2.0\AdSdkDemo-Studio-master\AdSdkDemo-Studio-master\AdSdkDemo-Studio.iml" />
-      <module fileurl="file://C:\Users\Avidly\Desktop\work\codes\Demo\UPAdsSdk_Sample_AS\UPAdsSdk_Sample_3005_AS.iml" filepath="C:\Users\Avidly\Desktop\work\codes\Demo\UPAdsSdk_Sample_AS\UPAdsSdk_Sample_3005_AS.iml" />
       <module fileurl="file://$PROJECT_DIR$/UPAdsSdk_Sample_AS.iml" filepath="$PROJECT_DIR$/UPAdsSdk_Sample_AS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

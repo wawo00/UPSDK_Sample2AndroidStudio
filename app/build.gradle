@@ -5,11 +5,11 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
 //        applicationId "com.candy.world.crush.jam.free"
-//        applicationId "com.holaverse.holagames.wt"
-        applicationId "com.epic.slots.casino.vegas.amazon.avidly"
-//        applicationId ""
+//        applicationId "com.martian.creator2048"
+        applicationId "com.holaverse.holagames"
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
+
         targetSdkVersion 26
         versionCode 3005
         versionName "3.0.0.5"
@@ -50,8 +50,11 @@ repositories {
 
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
+
     //core-lib
-    compile(name: 'UPAdsSdk_3.0.05_fixGDPR', ext: 'aar')
+
+//  compile(name: 'UPAdsSdk_3.0.06_foreign', ext: 'aar')
+    compile(name: 'UPAdsSdk_3.0.05', ext: 'aar')
     //networks
     compile(name: 'adcolony_ads_335', ext: 'aar')
     compile(name: 'amazon_ads', ext: 'aar')
@@ -77,15 +80,20 @@ dependencies {
     compile(name: 'youlan_ads', ext: 'aar')
     compile(name: 'facebook_exo_player', ext: 'aar')
     compile(name: 'facebook_ads', ext: 'aar')
+//    compile(name: 'org.apache.http.legacy', ext: 'jar')
+
+    //外部统计包
+    compile(name: 'analysissdk-foreign_R3.2.0.0', ext: 'aar')
+
     //头条
 //    compile(name: 'toutiao_ads', ext: 'aar')
 //    compile(name: 'toutiao_ads_sdk', ext: 'aar')
 //    compile(name: 'android-gif-drawable', ext: 'aar')
     //dap
-    compile(name: 'dap_ads_cw', ext: 'aar')
-    compile(name: 'dap_ads_vd', ext: 'aar')
-    compile(name: 'dap_ads', ext: 'aar')
-    compile(name: 'palette-v7-26.1.0', ext: 'aar')
+//    compile(name: 'dap_ads_cw', ext: 'aar')
+//    compile(name: 'dap_ads_vd', ext: 'aar')
+//    compile(name: 'dap_ads', ext: 'aar')
+//    compile(name: 'palette-v7-26.1.0', ext: 'aar')
 //support-libs
 //    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
     compile(name: 'gson-2.7', ext: 'jar')
@@ -97,9 +105,11 @@ dependencies {
 //    compile 'com.google.android.gms:play-services:12+'  //会冲突
     compile 'com.google.android.gms:play-services-ads:15.0.1'
 
-
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
+
+    //为了测试统计包
+    compile 'pub.devrel:easypermissions:0.3.0'
 }
 
 
