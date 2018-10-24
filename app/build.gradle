@@ -5,8 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
 //        applicationId "com.candy.world.crush.jam.free"
-//        applicationId "com.holaverse.holagames.wt"
-        applicationId "com.epic.slots.casino.vegas.amazon.avidly"
+        applicationId "com.holaverse.holagames.wt"
 //        applicationId ""
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
@@ -95,9 +94,9 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.android.support:customtabs:26.1.0'
 //    compile 'com.google.android.gms:play-services:12+'  //会冲突
-    compile 'com.google.android.gms:play-services-ads:15.0.1'
-
-
+    compile 'com.google.android.gms:play-services-ads:16.0.0'
+//    compile 'com.google.android.gms:play-services-ads:17.0.0'
+//    compile 'com.google.android.gms:play-services-ads:15.0.1'
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
 }
