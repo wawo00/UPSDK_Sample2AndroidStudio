@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
-import com.ironsource.mediationsdk.IronSource;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 
@@ -58,8 +57,8 @@ public class MainActivity extends Activity {
 		btnInterstitial.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-//				Intent intent = new Intent(MainActivity.this, InterstitialActivity.class);
-				Intent intent = new Intent(MainActivity.this, MyInterstitialActivity.class);
+				Intent intent = new Intent(MainActivity.this, InterstitialActivity.class);
+//				Intent intent = new Intent(MainActivity.this, MyInterstitialActivity.class);
 
 				startActivity(intent);
 

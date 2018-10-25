@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class InterstitialActivity extends Activity {
-	private static final String TAG = "AdsSdk_3005";
+	private static final String TAG = "AdsSdk_3006";
 
 	UPInterstitialAd mInterstitialAdAAA;
 	UPInterstitialAd mInterstitialAdBBB;
