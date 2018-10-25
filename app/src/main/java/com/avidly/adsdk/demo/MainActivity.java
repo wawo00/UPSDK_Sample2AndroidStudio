@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
-import com.ironsource.mediationsdk.IronSource;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 
