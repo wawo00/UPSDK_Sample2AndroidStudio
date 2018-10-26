@@ -92,6 +92,10 @@ dependencies {
 //    compile 'com.google.android.gms:play-services-ads:15.0.1'
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
+
+
+    //为了测试统计包
+    compile 'pub.devrel:easypermissions:0.3.0'
 }
 
 
