@@ -1,5 +1,6 @@
 package com.avidly.adsdk.demo;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.DialogInterface;
@@ -7,17 +8,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
+import com.hola.sdk.HolaAnalysis;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 
-public class MainActivity extends Activity {
+import java.util.List;
+
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
+
+
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+	public static final int RC_PHONE_STATE=3;
 	private static final String TAG = "AdsSdk_demo";
      TextView tv_version;
 	Button btnRwardVideo;
@@ -33,6 +46,11 @@ public class MainActivity extends Activity {
 //        UPAdsSdk.init();
 		//方法一 用户自己检查GDPR
 //		initUpAdsSdk();
+		photoState();
+		initOuterAnalysis();
+
+		//设置customid
+		UPAdsSdk.setCustomerId("123321");
 
 
 		//设置customid
@@ -181,6 +199,25 @@ public class MainActivity extends Activity {
 	   }
    };
 
+
+
+
+
+	@AfterPermissionGranted(RC_PHONE_STATE)
+	public void photoState() {
+		if (EasyPermissions.hasPermissions(this, Manifest.permission.READ_PHONE_STATE)) {
+			Toast.makeText(this, "TODO: Photo things", Toast.LENGTH_LONG).show();
+		} else {
+			EasyPermissions.requestPermissions(this, "需要获取设备信息！", RC_PHONE_STATE, Manifest.permission.READ_PHONE_STATE);
+		}
+	}
+
+
+
+
+
+
+
 	/**
 	 * 初始化sdk
 	 * 初始化abtest
@@ -188,9 +225,55 @@ public class MainActivity extends Activity {
 	 */
 	 public void initSdkAndGDPR()
 	 {
-		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneForeign);
+		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneDomestic);
 		 UPAdsSdk.initAbtConfigJson("wt_8080", true, 100, "avidly", "M", 80, new String[]{"tag1", "tag2"});
 
 	 }
+
+
+
+	/**
+	 * 用于测试外部统计包
+	 */
+	private void initOuterAnalysis() {
+		Log.i(TAG, "initOuterAnalysis: enter");
+		HolaAnalysis.initWithZone(getApplicationContext(), "999999", "666666",0);
+		HolaAnalysis.setCustomerId("99999");
+		HolaAnalysis.log("initOuterAnalysis");
+
+		for (int i = 0; i < 10; i++) {
+			HolaAnalysis.log("Call OuterAnalysis2domestic times "+i);
+			Log.i(TAG, "Call OuterAnalysis2domestic times "+i);
+			try {
+				Thread.sleep(
+						1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+	}
+
+	@Override
+	public void onPermissionsGranted(int requestCode, List<String> perms) {
+		Toast.makeText(this, "onPermissionsGranted", Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onPermissionsDenied(int requestCode, List<String> perms) {
+		Toast.makeText(this, "onPermissionsDenied", Toast.LENGTH_SHORT).show();
+
+		new AppSettingsDialog.Builder(this)
+				.setTitle("请求权限")
+				.setRationale("需要开启才能进行下去！")
+				.build()
+				.show();
+	}
 
 }
