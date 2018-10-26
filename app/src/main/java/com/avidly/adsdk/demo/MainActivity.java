@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
 //		initUpAdsSdk();
 
 
-		//设置customid
-//		UPAdsSdk.setCustomerId("66666666666666666666666666");
+//		设置customid
+		UPAdsSdk.setCustomerId("66666666666666666666666666");
 
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
@@ -67,8 +67,6 @@ public class MainActivity extends Activity {
 
 			}
 		});
-
-//		IronSource.init(this,"2121");
 
 
 		btnRwardVideo = (Button) findViewById(R.id.btnRwardVideo);

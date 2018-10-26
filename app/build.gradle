@@ -67,6 +67,11 @@ dependencies {
     compile(name: 'facebook_exo_player', ext: 'aar')
     compile(name: 'facebook_ads', ext: 'aar')
 
+
+    //外部统计包
+
+    compile(name: 'analysissdk-foreign_R3.2.0.0', ext: 'aar')
+
     //dap
     compile(name: 'dap_ads_cw', ext: 'aar')
     compile(name: 'dap_ads_vd', ext: 'aar')
