@@ -52,30 +52,17 @@ dependencies {
     //core-lib
     compile(name: 'UPAdsSdk_3.0.06', ext: 'aar')
     //networks
-//    compile(name: 'adcolony_ads_335', ext: 'aar')
-//    compile(name: 'amazon_ads', ext: 'aar')
-//    compile(name: 'applovin_ads', ext: 'aar')
-//    compile(name: 'appnext_ads', ext: 'aar')
-//    compile(name: 'appnext_core', ext: 'aar')
-//    compile(name: 'batmobi_ads', ext: 'aar')
+
     compile(name: 'centrixlink_ads', ext: 'aar')
     compile(name: 'chartboost_ads', ext: 'aar')
-//    compile(name: 'domob_ads', ext: 'aar')
     compile(name: 'inmobi_ads', ext: 'aar')
-//    compile(name: 'ironsource_ads', ext: 'aar')
-//    compile(name: 'maio_ads', ext: 'aar')
-//    compile(name: 'mobpower_ads', ext: 'aar')
+
     compile(name: 'mobvista_ads', ext: 'aar')
     compile(name: 'oneway_ads', ext: 'aar')
     compile(name: 'playable_ads', ext: 'aar')
-//    compile(name: 'tapjoy_ads', ext: 'aar')
-//    compile(name: 'unity_ads', ext: 'aar')
-//    compile(name: 'vk_ads', ext: 'aar')
+
     compile(name: 'vungle_ads', ext: 'aar')
-//    compile(name: 'youappi_ads', ext: 'aar')
-//    compile(name: 'youlan_ads', ext: 'aar')
-//    compile(name: 'facebook_exo_player', ext: 'aar')
-//    compile(name: 'facebook_ads', ext: 'aar')
+
     //头条
     compile(name: 'toutiao_ads', ext: 'aar')
 //    compile(name: 'toutiao_ads_sdk', ext: 'aar')
@@ -84,14 +71,7 @@ dependencies {
     //gdt
     compile(name: 'gdt_ads', ext: 'aar')
     //外部统计包
-    compile(name: 'analysissdk-domestic_R3.2.0.0', ext: 'aar')
-
-
-    //dap
-    compile(name: 'dap_ads_cw', ext: 'aar')
-    compile(name: 'dap_ads_vd', ext: 'aar')
-//    compile(name: 'dap_ads', ext: 'aar')
-    compile(name: 'palette-v7-26.1.0', ext: 'aar')
+//    compile(name: 'analysissdk-domestic_R3.2.0.0', ext: 'aar')
 
 //support-libs
 //    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
@@ -100,16 +80,15 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
-//    compile 'com.android.support:customtabs:26.1.0'
-//    compile 'com.google.android.gms:play-services:12+'  //会冲突
-//    compile 'com.google.android.gms:play-services-ads:16.0.0'
-//    compile 'com.google.android.gms:play-services-ads:17.0.0'
-//    compile 'com.google.android.gms:play-services-ads:15.0.1'
+
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
 
+
+    //admob
+//    compile 'com.google.android.gms:play-services-ads:16.0.0'
+
     //为了测试统计包
-    compile 'pub.devrel:easypermissions:0.3.0'
 }
 
 
