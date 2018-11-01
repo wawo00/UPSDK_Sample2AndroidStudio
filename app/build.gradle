@@ -57,6 +57,7 @@ dependencies {
     compile(name: 'applovin_ads', ext: 'aar')
     compile(name: 'appnext_ads', ext: 'aar')
     compile(name: 'appnext_core', ext: 'aar')
+    compile(name: 'batmobi_ads', ext: 'aar')
     compile(name: 'chartboost_ads', ext: 'aar')
     compile(name: 'ironsource_ads', ext: 'aar')
     compile(name: 'mobvista_ads', ext: 'aar')
@@ -74,17 +75,14 @@ dependencies {
     compile(name: 'palette-v7-26.1.0', ext: 'aar')
 
 //support-libs
-//    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
     compile(name: 'gson-2.7', ext: 'jar')
     compile 'com.android.support:support-v4:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'com.android.support:customtabs:26.1.0'
-//    compile 'com.google.android.gms:play-services:12+'  //会冲突
     compile 'com.google.android.gms:play-services-ads:16.0.0'
-//    compile 'com.google.android.gms:play-services-ads:17.0.0'
-//    compile 'com.google.android.gms:play-services-ads:15.0.1'
+
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
 }
