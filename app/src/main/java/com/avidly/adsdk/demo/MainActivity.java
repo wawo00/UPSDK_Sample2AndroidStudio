@@ -44,9 +44,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		UPAdsSdk.setDebuggable(true);
-
-
-
 		devicesState();
 		initOuterAnalysis();
 		initUpAdsSdk();
