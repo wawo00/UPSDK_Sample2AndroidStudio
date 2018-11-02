@@ -57,9 +57,6 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light" />
-        <activity android:name=".ShowDebugActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            ></activity>
     </application>
 
 </manifest>

@@ -93,13 +93,7 @@ public class MainActivity extends AppCompatActivity  {
 				Log.i(TAG, "abtestResult0 : "+abtestResult0+" ----abtestResult1: "+abtestResult1);
 			}
 		});
-		btnShowDebug=findViewById(R.id.btnShowDebug);
-		btnShowDebug.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(MainActivity.this,ShowDebugActivity.class));
-			}
-		});
+
 	}
 
 
