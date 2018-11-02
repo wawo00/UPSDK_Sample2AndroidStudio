@@ -80,9 +80,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
-//    compile 'com.android.support:customtabs:26.1.0'
-    compile 'com.google.android.gms:play-services-ads:16.0.0'
-
+    //admob
+        compile 'com.google.android.gms:play-services-ads:16.0.0'
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
 }
