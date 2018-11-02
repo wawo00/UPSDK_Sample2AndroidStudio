@@ -50,13 +50,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 //		initUpAdsSdk();
 		photoState();
 		initOuterAnalysis();
-		//设置customid
-		UPAdsSdk.setCustomerId("123321");
 
-
-
-//		设置customid
-		UPAdsSdk.setCustomerId("66666666666666666666666666");
 
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
@@ -287,12 +281,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 	private void initOuterAnalysis() {
 		Log.i(TAG, "initOuterAnalysis: enter");
 		HolaAnalysis.initWithZone(getApplicationContext(), "999999", "666666",0);
-		HolaAnalysis.setCustomerId("99999");
+		HolaAnalysis.setCustomerId("9999990"); //android studio user
 		HolaAnalysis.log("initOuterAnalysis");
 
 		for (int i = 0; i < 10; i++) {
-			HolaAnalysis.log("Call OuterAnalysis2domestic times "+i);
-			Log.i(TAG, "Call OuterAnalysis2domestic times "+i);
+			HolaAnalysis.log("Call OuterAnalysis2foreign times "+i);
+			Log.i(TAG, "Call OuterAnalysis2foreign times "+i);
 			try {
 				Thread.sleep(
 						1000);
