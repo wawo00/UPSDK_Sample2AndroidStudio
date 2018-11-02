@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 	private void initOuterAnalysis() {
 		Log.i(TAG, "initOuterAnalysis: enter");
 		//设置customid
-		HolaAnalysis.initWithZone(getApplicationContext(), "888888", "666668",1);
+		HolaAnalysis.initWithZone(getApplicationContext(), "8888882", "000002",1);
 		HolaAnalysis.setCustomerId(GetAndroid(this)); //android studio user
 		HolaAnalysis.log("initOuterAnalysis");
 
