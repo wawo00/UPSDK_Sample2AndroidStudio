@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
-
+		initOuterAnalysis();
 		initUpAdsSdk(result);
 		tv_version= (TextView)findViewById(R.id.tv_version);
 		tv_version.setText(VersionUtil.getVersionName(this));
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
 	 */
 	private void initOuterAnalysis() {
 		Log.i(TAG, "initOuterAnalysis: enter");
-		HolaAnalysis.initWithZone(getApplicationContext(), "999999", "666666",0);
+		HolaAnalysis.initWithZone(getApplicationContext(), "8888881", "000001",0);
 		HolaAnalysis.setCustomerId("9999990"); //android studio user
 		HolaAnalysis.log("initOuterAnalysis");
 
