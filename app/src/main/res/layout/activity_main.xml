@@ -47,10 +47,5 @@
         android:layout_margin="5dp"
         android:text="获得Abtest数据" />
 
-    <Button
-        android:id="@+id/btnShowDebug"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="show Debug" />
+
 </LinearLayout>

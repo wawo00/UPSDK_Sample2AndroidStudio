@@ -27,11 +27,9 @@ import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
 
 import java.util.List;
 
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.AppSettingsDialog;
-import pub.devrel.easypermissions.EasyPermissions;
 
-public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+
+public class MainActivity extends AppCompatActivity {
 	private static final String TAG = "AdsSdk_demo";
      TextView tv_version;
 	Button btnRwardVideo;
@@ -45,12 +43,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		UPAdsSdk.setDebuggable(true);
-//        UPAdsSdk.init();
-		//方法一 用户自己检查GDPR
-//		initUpAdsSdk();
-		photoState();
-		initOuterAnalysis();
-
 
 		//方法二
 		AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result=UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
@@ -105,13 +97,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 				String abtestResult0=	 UPAdsSdk.getAbtConfigString("ad_hp");
 				String abtestResult1=	 UPAdsSdk.getAbtConfigString("ad_hp");
 				Log.i(TAG, "abtestResult0 : "+abtestResult0+" ----abtestResult1: "+abtestResult1);
-			}
-		});
-		btnShowDebug=findViewById(R.id.btnShowDebug);
-		btnShowDebug.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(MainActivity.this,ShowDebugActivity.class));
 			}
 		});
 
@@ -260,20 +245,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
 
 
-	@AfterPermissionGranted(RC_PHONE_STATE)
-	public void photoState() {
-		if (EasyPermissions.hasPermissions(this, Manifest.permission.READ_PHONE_STATE)) {
-			Toast.makeText(this, "TODO: Photo things", Toast.LENGTH_LONG).show();
-		} else {
-			EasyPermissions.requestPermissions(this, "需要获取设备信息！", RC_PHONE_STATE, Manifest.permission.READ_PHONE_STATE);
-		}
-	}
-
-
-
-
-
-
 
 	/**
 	 * 用于测试外部统计包
@@ -295,28 +266,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 			}
 		}
 
-	}
-
-	@Override
-	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-	}
-
-	@Override
-	public void onPermissionsGranted(int requestCode, List<String> perms) {
-		Toast.makeText(this, "onPermissionsGranted", Toast.LENGTH_SHORT).show();
-	}
-
-	@Override
-	public void onPermissionsDenied(int requestCode, List<String> perms) {
-		Toast.makeText(this, "onPermissionsDenied", Toast.LENGTH_SHORT).show();
-
-		new AppSettingsDialog.Builder(this)
-				.setTitle("请求权限")
-				.setRationale("需要开启才能进行下去！")
-				.build()
-				.show();
 	}
 
 
