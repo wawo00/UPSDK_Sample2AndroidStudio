@@ -19,14 +19,18 @@ import android.widget.Toast;
 
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
+import com.hola.sdk.HolaAnalysis;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 
 import java.util.List;
 
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks   {
 	public static final int RC_PHONE_STATE=3;
 	private static final String TAG = "AdsSdk_demo";
      TextView tv_version;
@@ -41,10 +45,11 @@ public class MainActivity extends AppCompatActivity  {
 		setContentView(R.layout.activity_main);
 		UPAdsSdk.setDebuggable(true);
 
-		//设置customid
-		UPAdsSdk.setCustomerId(GetAndroid(this));
 
-        initUpAdsSdk();
+
+		devicesState();
+		initOuterAnalysis();
+		initUpAdsSdk();
 		tv_version= (TextView)findViewById(R.id.tv_version);
 		tv_version.setText(VersionUtil.getVersionName(this));
 		btnBanner = (Button) findViewById(R.id.btnBanner);
@@ -136,6 +141,61 @@ public class MainActivity extends AppCompatActivity  {
 		return androidId;
 	}
 
+
+	@AfterPermissionGranted(RC_PHONE_STATE)
+	public void devicesState() {
+		if (EasyPermissions.hasPermissions(this, Manifest.permission.READ_PHONE_STATE)) {
+			Toast.makeText(this, "TODO: ", Toast.LENGTH_LONG).show();
+		} else {
+			EasyPermissions.requestPermissions(this, "需要获取设备信息！", RC_PHONE_STATE, Manifest.permission.READ_PHONE_STATE);
+		}
+	}
+
+
+	/**
+	 * 用于测试外部统计包
+	 */
+	private void initOuterAnalysis() {
+		Log.i(TAG, "initOuterAnalysis: enter");
+		//设置customid
+		HolaAnalysis.initWithZone(getApplicationContext(), "888888", "666668",1);
+		HolaAnalysis.setCustomerId(GetAndroid(this)); //android studio user
+		HolaAnalysis.log("initOuterAnalysis");
+
+		for (int i = 0; i < 10; i++) {
+			HolaAnalysis.log("Call OuterAnalysis2domestic times "+i);
+			Log.i(TAG, "Call OuterAnalysis2domestic times "+i);
+			try {
+				Thread.sleep(
+						1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+	}
+
+	@Override
+	public void onPermissionsGranted(int requestCode, List<String> perms) {
+		Toast.makeText(this, "onPermissionsGranted", Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onPermissionsDenied(int requestCode, List<String> perms) {
+		Toast.makeText(this, "onPermissionsDenied", Toast.LENGTH_SHORT).show();
+
+		new AppSettingsDialog.Builder(this)
+				.setTitle("请求权限")
+				.setRationale("需要开启才能进行下去！")
+				.build()
+				.show();
+	}
 
 
 }
