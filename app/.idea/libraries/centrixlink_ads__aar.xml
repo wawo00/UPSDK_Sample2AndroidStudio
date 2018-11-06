@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="centrixlink_ads:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/centrixlink_ads.aar/0e41cf90543c2b16ab35ac0badc0ce75/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/centrixlink_ads.aar/0e41cf90543c2b16ab35ac0badc0ce75/jars/libs/Centrixlink2.5.3.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/centrixlink_ads.aar/0e41cf90543c2b16ab35ac0badc0ce75/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

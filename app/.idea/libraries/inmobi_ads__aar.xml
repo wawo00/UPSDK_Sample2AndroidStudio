@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="inmobi_ads:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/inmobi_ads.aar/f43fb49653f9fedba8c2a5f482392f9b/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/inmobi_ads.aar/f43fb49653f9fedba8c2a5f482392f9b/jars/libs/picasso-2.5.2.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/inmobi_ads.aar/f43fb49653f9fedba8c2a5f482392f9b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/inmobi_ads.aar/f43fb49653f9fedba8c2a5f482392f9b/jars/libs/inmobi-7.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="playable_ads:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/playable_ads.aar/c8e680f91ca6d2a84885fcf12ac27185/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/playable_ads.aar/c8e680f91ca6d2a84885fcf12ac27185/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

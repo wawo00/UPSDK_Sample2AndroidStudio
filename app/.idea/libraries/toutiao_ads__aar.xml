@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="toutiao_ads:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/toutiao_ads.aar/f8d98cede5566900829eb02048e87bb6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/toutiao_ads.aar/f8d98cede5566900829eb02048e87bb6/jars/libs/android-query-full.0.26.7.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/toutiao_ads.aar/f8d98cede5566900829eb02048e87bb6/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/toutiao_ads.aar/f8d98cede5566900829eb02048e87bb6/jars/libs/toutiao_1.9.6.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
