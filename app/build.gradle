@@ -52,26 +52,21 @@ dependencies {
     //core-lib
     compile(name: 'UPAdsSdk_3.0.06', ext: 'aar')
     //networks
-
-    compile(name: 'centrixlink_ads', ext: 'aar')
-    compile(name: 'chartboost_ads', ext: 'aar')
     compile(name: 'inmobi_ads', ext: 'aar')
-
     compile(name: 'mobvista_ads', ext: 'aar')
     compile(name: 'oneway_ads', ext: 'aar')
     compile(name: 'playable_ads', ext: 'aar')
-
     compile(name: 'vungle_ads', ext: 'aar')
+    compile(name: 'youlan_ads', ext: 'aar')
 
     //头条
     compile(name: 'toutiao_ads', ext: 'aar')
 //    compile(name: 'toutiao_ads_sdk', ext: 'aar')
     compile(name: 'android-gif-drawable', ext: 'aar')
 
-    //gdt
-    compile(name: 'gdt_ads', ext: 'aar')
+
     //外部统计包
-//    compile(name: 'analysissdk-domestic_R3.2.0.0', ext: 'aar')
+    compile(name: 'analysissdk-domestic_R3.2.0.0', ext: 'aar')
 
 //support-libs
 //    compile(name: 'animated-vector-drawable-26.1.0', ext: 'aar')
@@ -84,8 +79,7 @@ dependencies {
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
 
-    //external anaylse support
-    compile(name: 'analysissdk-domestic_R3.2.0.0', ext: 'aar')
+
     //permission tool
     compile 'pub.devrel:easypermissions:1.0.1'
 }
