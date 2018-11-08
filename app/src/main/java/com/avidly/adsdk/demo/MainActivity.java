@@ -110,15 +110,15 @@ public class MainActivity extends Activity {
 
 		UPGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
 		// 添加回调接口
-		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_aaa", new UPBannerAdListener() {
+		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("sample_banner_foreign", new UPBannerAdListener() {
 			@Override
 			public void onClicked() {
-				Log.i(TAG, "banner_aaa onClicked ");
+				Log.i(TAG, "sample_banner_foreign onClicked ");
 			}
 
 			@Override
 			public void onDisplayed() {
-				Log.i(TAG, "banner_aaa onDisplayed ");
+				Log.i(TAG, "sample_banner_foreign onDisplayed ");
 			}
 		});
 		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_bbb", new UPBannerAdListener() {
@@ -146,7 +146,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void run() {
 
-				UPGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("banner_aaa");
+				UPGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("sample_banner_foreign");
 			}
 		}, 1000);
 
@@ -244,7 +244,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		UPGameEasyBannerWrapper.getInstance().removeGameBannerAtADPlaceId("banner_aaa");
+		UPGameEasyBannerWrapper.getInstance().removeGameBannerAtADPlaceId("sample_banner_foreign");
 	}
 
 }

@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
 //        applicationId "com.candy.world.crush.jam.free"
-        applicationId "roy.wan.foreign"
+        applicationId "adam.lean.foreign"
 //        applicationId ""
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15

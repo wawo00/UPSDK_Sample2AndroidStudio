@@ -28,18 +28,18 @@ public class InterstitialActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_interstitial);
 
-		mInterstitialAdAAA = new UPInterstitialAd(this, "inter_aaa");
+		mInterstitialAdAAA = new UPInterstitialAd(this, "sample_inter_foreign");
 		mInterstitialAdBBB = new UPInterstitialAd(InterstitialActivity.this, "inter_bbb");
 // 设置回调接口
 		final UPInterstitialLoadCallback callback = new UPInterstitialLoadCallback() {
 			@Override
 			public void onLoadSuccessed(String placement) {
-				Log.i(TAG, "InterstitialAd " + placement + " onLoadSuccessed:");
+				Log.i(TAG, "sample_inter_foreign " + placement + " onLoadSuccessed:");
 
 			}
 			@Override
 			public void onLoadFailed(String placement) {
-				Log.i(TAG, "InterstitialAd " + placement + " onLoadFailed:");
+				Log.i(TAG, "sample_inter_foreign " + placement + " onLoadFailed:");
 			}
 		};
 
@@ -78,10 +78,7 @@ public class InterstitialActivity extends Activity {
 			}
 		});
 
-		Log.e("abtest ===> ","global" + UPAdsSdk.getAbtConfigString("RewardVideo_Task"));
-		Log.e("abtest ===> ","global" + UPAdsSdk.getAbtConfig("RewardVideo_Card"));
-		Log.e("abtest ===> ","ttl  " + UPAdsSdk.getAbtConfigString("RewardVideo_Slot"));
-		Log.e("abtest ===> ","ttl  " + UPAdsSdk.getAbtConfig("RewardVideo_Wheel"));
+
 
 	}
 
