@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class VideoActivity extends Activity {
-	private static final String TAG = "AdsSdk_demo";
+	private static final String TAG = "upsdk_demo";
 	private int coins;
 
 	Button btnPlay;
