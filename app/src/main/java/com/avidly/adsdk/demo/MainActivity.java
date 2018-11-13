@@ -32,7 +32,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks   {
 	public static final int RC_PHONE_STATE=3;
-	private static final String TAG = "AdsSdk_demo";
+	private static final String TAG = "upsdk_demo";
      TextView tv_version;
 	Button btnRwardVideo;
 	Button btnBanner;

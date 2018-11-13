@@ -14,22 +14,21 @@ import android.view.View;
 import android.widget.Button;
 
 public class InterstitialActivity extends Activity {
-	private static final String TAG = "AdsSdk_3006";
+	private static final String TAG = "upsdk_demo";
 
 	UPInterstitialAd mInterstitialAdAAA;
-	UPInterstitialAd mInterstitialAdBBB;
 
 	Button mButtonAAA;
 	Button mButtonBBB;
 	Button mBtnDebugView;
+	private static String interPlacementId="inter_aaa";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_interstitial);
 
-		mInterstitialAdAAA = new UPInterstitialAd(this, "inter_aaa");
-		mInterstitialAdBBB = new UPInterstitialAd(InterstitialActivity.this, "inter_bbb");
+		mInterstitialAdAAA = new UPInterstitialAd(InterstitialActivity.this, interPlacementId);
 // 设置回调接口
 		final UPInterstitialLoadCallback callback = new UPInterstitialLoadCallback() {
 			@Override
@@ -45,7 +44,6 @@ public class InterstitialActivity extends Activity {
 
 //展示
 		mInterstitialAdAAA.load(callback);
-		mInterstitialAdBBB.load(callback);
 
 		mButtonAAA = (Button) findViewById(R.id.buttonAAA);
 		mButtonBBB = (Button) findViewById(R.id.buttonBBB);
@@ -60,14 +58,7 @@ public class InterstitialActivity extends Activity {
 			}
 		});
 
-		mButtonBBB.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (mInterstitialAdBBB != null && mInterstitialAdBBB.isReady()) {
-					mInterstitialAdBBB.show();
-				}
-			}
-		});
+
 
 		mBtnDebugView.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -78,10 +69,10 @@ public class InterstitialActivity extends Activity {
 			}
 		});
 
-		Log.e("abtest ===> ","global" + UPAdsSdk.getAbtConfigString("RewardVideo_Task"));
-		Log.e("abtest ===> ","global" + UPAdsSdk.getAbtConfig("RewardVideo_Card"));
-		Log.e("abtest ===> ","ttl  " + UPAdsSdk.getAbtConfigString("RewardVideo_Slot"));
-		Log.e("abtest ===> ","ttl  " + UPAdsSdk.getAbtConfig("RewardVideo_Wheel"));
+//		Log.e("abtest ===> ","global" + UPAdsSdk.getAbtConfigString("RewardVideo_Task"));
+//		Log.e("abtest ===> ","global" + UPAdsSdk.getAbtConfig("RewardVideo_Card"));
+//		Log.e("abtest ===> ","ttl  " + UPAdsSdk.getAbtConfigString("RewardVideo_Slot"));
+//		Log.e("abtest ===> ","ttl  " + UPAdsSdk.getAbtConfig("RewardVideo_Wheel"));
 
 	}
 

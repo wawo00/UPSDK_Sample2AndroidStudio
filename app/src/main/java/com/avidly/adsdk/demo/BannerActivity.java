@@ -15,14 +15,15 @@ import android.util.Log;
 import android.widget.LinearLayout;
 
 public class BannerActivity extends Activity {
-	private static final String TAG = "AdsSdk_demo";
+	private static final String TAG = "upsdk_demo";
+	private static String bannerPlacementId="banner_aaa";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_banner);
 		UPGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
 		// 添加回调接口
-		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_aaa", new UPBannerAdListener() {
+		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId(bannerPlacementId, new UPBannerAdListener() {
 			@Override
 			public void onClicked() {
 				Log.i(TAG, "banner_aaa onClicked ");
@@ -33,17 +34,7 @@ public class BannerActivity extends Activity {
 				Log.i(TAG, "banner_aaa onDisplayed ");
 			}
 		});
-		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_bbb", new UPBannerAdListener() {
-			@Override
-			public void onClicked() {
-				Log.i(TAG, "banner_bbb onClicked ");
-			}
 
-			@Override
-			public void onDisplayed() {
-				Log.i(TAG, "banner_bbb onDisplayed ");
-			}
-		});
 //        UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
 
 		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
@@ -58,7 +49,7 @@ public class BannerActivity extends Activity {
 			@Override
 			public void run() {
 
-				UPGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("banner_aaa");
+				UPGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId(bannerPlacementId);
 			}
 		}, 1000);
 
@@ -67,6 +58,6 @@ public class BannerActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		UPGameEasyBannerWrapper.getInstance().removeGameBannerAtADPlaceId("banner_aaa");
+		UPGameEasyBannerWrapper.getInstance().removeGameBannerAtADPlaceId(bannerPlacementId);
 	}
 }
