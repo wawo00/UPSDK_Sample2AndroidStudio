@@ -4,10 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion '28.0.2'
     defaultConfig {
-//        applicationId "com.candy.world.crush.jam.free"
         applicationId "adam.lean.foreign"
-//        applicationId ""
-//        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 3006
@@ -40,40 +37,30 @@ android {
         }
     }
 
-//    flavorDimensions "RegionControl"
-//    productFlavors{
-//        province{//省级版本
-//            applicationId "com.crazyman.product.province"
-//            versionName "version-province-1.0"
-//        }
-//
-//        city {//市级版本
-//            applicationId "com.crazyman.product.city "
-//            versionName "version-city -1.0"
-//        }
-//
-//        county{//县级版本
-//            applicationId "com.crazyman.product.county"
-//            versionName "version-county-1.0"
-//        }
-//
-//        town{//村镇级版本
-//            applicationId "com.crazyman.product.town"
-//            versionName "version-town-1.0"
-//        }
-//    }
+    flavorDimensions "RegionControl"
+    productFlavors{
+        domestic{//国内
+            applicationId "adam.lean.inland"
+        }
+
+        foreign {//国外
+            applicationId "adam.lean.foreign"
+        }
+
+
+    }
 
 
 }
 
 repositories {
     flatDir {
-        dirs 'libs'
+        dirs 'libs','ads_domestic','ads_foreign'
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+//    compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])
     //core-lib
 //    compile(name: 'UPAdsSdk_3.0.06', ext: 'aar')
 //    //networks
@@ -101,6 +88,20 @@ dependencies {
 
 //support-libs
 //    compile(name: 'gson-2.7', ext: 'jar')
+
+    //inland
+    domesticCompile(name: 'gdt_ads', ext: 'aar')
+    domesticCompile(name: 'inmobi_ads', ext: 'aar')
+    domesticCompile(name: 'mobvista_ads', ext: 'aar')
+    domesticCompile(name: 'oneway_ads', ext: 'aar')
+    domesticCompile(name: 'playable_ads', ext: 'aar')
+    domesticCompile(name: 'toutiao_ads', ext: 'aar')
+    domesticCompile(name: 'vungle_ads', ext: 'aar')
+    domesticCompile(name: 'youlan_ads', ext: 'aar')
+
+
+
+
     compile 'com.android.support:support-v4:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
