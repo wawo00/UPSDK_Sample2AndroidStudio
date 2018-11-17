@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
     defaultConfig {
 //        applicationId "com.candy.world.crush.jam.free"
         applicationId "adam.lean.inland"
 //        applicationId ""
 //        applicationId "coin.dozer.arcadegame.free.casino"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 3006
         versionName "3.0.0.6"
         multiDexEnabled true
@@ -70,6 +70,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
 
+//permission tool
+    compile 'pub.devrel:easypermissions:1.0.1'
 }
 
 

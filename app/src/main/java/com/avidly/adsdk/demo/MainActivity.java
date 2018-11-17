@@ -24,9 +24,12 @@ import com.up.ads.tool.AccessPrivacyInfoManager;
 
 import java.util.List;
 
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 	public static final int RC_PHONE_STATE=3;
 	private static final String TAG = "upsdk_demo";
      TextView tv_version;
@@ -35,12 +38,19 @@ public class MainActivity extends AppCompatActivity  {
 	Button btnInterstitial;
 	Button btnExit,btnGetAbTest,btnShowDebug;
 
+	private static final String[] WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE=
+			{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE,Manifest.permission.REQUEST_INSTALL_PACKAGES};
+
+	private static final int RC_WRITE_EXTERNAL_STORAGE = 111;
+	private static final int RC_READ_PHONE_STATE = 112;
+	private static final int RC_REQUEST_INSTALL_PACKAGES = 113;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		UPAdsSdk.setDebuggable(true);
-
+		requestPermissions();
 		//设置customid
 		UPAdsSdk.setCustomerId(GetAndroid(this));
 
@@ -130,5 +140,63 @@ public class MainActivity extends AppCompatActivity  {
 	}
 
 
+
+
+
+
+	@AfterPermissionGranted(RC_WRITE_EXTERNAL_STORAGE)
+	public void requestPermissions() {
+		if (hasAllPermissions()) {
+			// Have permission, do the thing!
+			Toast.makeText(this, "TODO:获得所有需要的权限了", Toast.LENGTH_LONG).show();
+		} else {
+			// Ask for one permission
+			EasyPermissions.requestPermissions(
+					this,
+					"需要以下权限",
+					RC_WRITE_EXTERNAL_STORAGE,
+					RC_PHONE_STATE,
+					RC_REQUEST_INSTALL_PACKAGES,
+					WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE
+					);
+		}
+	}
+
+	private boolean hasWriteExteralPermission() {
+		return EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+	}
+
+	private boolean hasAllPermissions() {
+		return EasyPermissions.hasPermissions(this, WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE);
+	}
+
+	private boolean hasReadPhonePermission() {
+		return EasyPermissions.hasPermissions(this, Manifest.permission.READ_PHONE_STATE);
+	}
+	@Override
+	public void onRequestPermissionsResult(int requestCode,
+										   @NonNull String[] permissions,
+										   @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+		// EasyPermissions handles the request result.
+		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+	}
+
+	@Override
+	public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+		Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
+	}
+
+	@Override
+	public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+		Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+
+		// (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
+		// This will display a dialog directing them to enable the permission in app settings.
+		if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+			new AppSettingsDialog.Builder(this).build().show();
+		}
+	}
 
 }
