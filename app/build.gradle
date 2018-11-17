@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "roy.wan.foreign"
+        applicationId "adam.lean.foreign"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 3006
@@ -17,7 +17,7 @@ android {
     dexOptions {
         preDexLibraries false
         incremental false
-        javaMaxHeapSize "3072m"
+        javaMaxHeapSize "3584m"
     }
 
     signingConfigs {
@@ -32,7 +32,7 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-//            minifyEnabled true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
