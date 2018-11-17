@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 
 public class BannerActivity extends Activity {
 	private static final String TAG = "upsdk_demos";
-	private static String bannerPlacementId="banner_aaa";
+	private static String bannerPlacementId="sample_banner";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -21,13 +21,14 @@ public class InterstitialActivity extends Activity {
 	Button mButtonAAA;
 	Button mButtonBBB;
 	Button mBtnDebugView;
-	private  static  String interPlacementId="inter_aaa";
-
+	private  static  String interPlacementId="sample_inter";
+   private  Button btn_inter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_interstitial);
-
+		btn_inter=findViewById(R.id.buttonAAA);
+		btn_inter.setText("广告位 "+interPlacementId);
 		mInterstitialAdAAA = new UPInterstitialAd(InterstitialActivity.this, interPlacementId);
 // 设置回调接口
 		final UPInterstitialLoadCallback callback = new UPInterstitialLoadCallback() {

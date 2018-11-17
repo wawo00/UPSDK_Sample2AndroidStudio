@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="广告位：inter_aaa" />
+         />
 
     <Button
         android:id="@+id/buttonBBB"
@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
+        android:visibility="gone"
         android:text="广告位：inter_bbb" />
 
     <Button
