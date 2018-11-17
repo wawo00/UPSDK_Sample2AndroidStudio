@@ -16,14 +16,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
-
 import java.util.List;
-
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -37,10 +34,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 	Button btnBanner;
 	Button btnInterstitial;
 	Button btnExit,btnGetAbTest,btnShowDebug;
-
 	private static final String[] WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE=
 			{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE,Manifest.permission.REQUEST_INSTALL_PACKAGES};
-
 	private static final int RC_WRITE_EXTERNAL_STORAGE = 111;
 	private static final int RC_READ_PHONE_STATE = 112;
 	private static final int RC_REQUEST_INSTALL_PACKAGES = 113;
@@ -139,11 +134,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		return androidId;
 	}
 
-
-
-
-
-
 	@AfterPermissionGranted(RC_WRITE_EXTERNAL_STORAGE)
 	public void requestPermissions() {
 		if (hasAllPermissions()) {
@@ -191,7 +181,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 	@Override
 	public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
 		Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
-
 		// (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
 		// This will display a dialog directing them to enable the permission in app settings.
 		if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
