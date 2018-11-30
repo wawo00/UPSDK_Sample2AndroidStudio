@@ -20,12 +20,12 @@
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/meh"
-        android:label="@string/app_name">
-        <provider
-            android:name="com.duapps.ad.stats.DuAdCacheProvider"
-            android:authorities="${applicationId}.DuAdCacheProvider"
-            android:exported="false">
-        </provider>
+        android:label="${APPNAME}">
+        <!--<provider-->
+            <!--android:name="com.duapps.ad.stats.DuAdCacheProvider"-->
+            <!--android:authorities="${applicationId}.DuAdCacheProvider"-->
+            <!--android:exported="false">-->
+        <!--</provider>-->
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"

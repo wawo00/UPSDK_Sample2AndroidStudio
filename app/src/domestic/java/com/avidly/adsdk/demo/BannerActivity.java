@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 public class BannerActivity extends Activity {
 	private static final String TAG = "upsdk_demo";
 
-	private static final String bannerPlacementId="banner_aaa";
+	private static final String bannerPlacementId="sample_banner";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +39,6 @@ public class BannerActivity extends Activity {
 
 //        UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
 
-		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
-			@Override
-			public void run() {
-//				UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
-
-			}
-		}, 1000);
 
 		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
 			@Override

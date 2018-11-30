@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 28
     buildToolsVersion '28.0.2'
+
     defaultConfig {
         applicationId "adam.lean.foreign"
         minSdkVersion 15
@@ -10,6 +12,9 @@ android {
         versionCode 3006
         versionName "3.0.0.6"
         multiDexEnabled true
+
+//        manifestPlaceholders = [APPNAME: "UPSDK-Demo"]
+
         ndk {
                 abiFilters 'armeabi-v7a'
             }
@@ -32,19 +37,29 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-//            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-foreign.pro'
         }
+
     }
 
+
     flavorDimensions "RegionControl"
+
     productFlavors{
         domestic{//国内
             applicationId "adam.lean.inland"
+//            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versi onCode}+"广告demo"];
+            manifestPlaceholders = [APPNAME: "${defaultConfig.versionCode}"+"Demo-Domestic"];
+            proguardFile 'proguard-rules-domestic.pro'
         }
 
         foreign {//国外
             applicationId "adam.lean.foreign"
+//            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versionCode}+"AdsDemo"];
+            manifestPlaceholders = [APPNAME: "${defaultConfig.versionCode}"+"Demo-foreign"];
+
+            proguardFile 'proguard-rules-foreign.pro'
         }
 
 
@@ -59,37 +74,20 @@ repositories {
     }
 }
 
+
+configurations {z
+    domesticCompile
+    foreignCompile
+}
+
+
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])
-    //core-lib
-//    compile(name: 'UPAdsSdk_3.0.06', ext: 'aar')
-//    //networks
-//    compile(name: 'adcolony_ads', ext: 'aar')
-//    compile(name: 'amazon_ads', ext: 'aar')
-//    compile(name: 'applovin_ads', ext: 'aar')
-//    compile(name: 'appnext_ads', ext: 'aar')
-//    compile(name: 'appnext_core', ext: 'aar')
-//    compile(name: 'batmobi_ads', ext: 'aar')
-//    compile(name: 'chartboost_ads', ext: 'aar')
-//    compile(name: 'ironsource_ads', ext: 'aar')
-//    compile(name: 'mobvista_ads', ext: 'aar')
-//    compile(name: 'tapjoy_ads', ext: 'aar')
-//    compile(name: 'unity_ads', ext: 'aar')
-//    compile(name: 'vungle_ads', ext: 'aar')
-//    compile(name: 'youappi_ads', ext: 'aar')
-//    compile(name: 'facebook_exo_player', ext: 'aar')
-//    compile(name: 'facebook_ads', ext: 'aar')
-//
-//    //dap
-//    compile(name: 'dap_ads_cw', ext: 'aar')
-//    compile(name: 'dap_ads_vd', ext: 'aar')
-////    compile(name: 'dap_ads', ext: 'aar')
-//    compile(name: 'palette-v7-26.1.0', ext: 'aar')
-
-//support-libs
-//    compile(name: 'gson-2.7', ext: 'jar')
+    //support-libs
+    compile(name: 'gson-2.7', ext: 'jar')
 
     //inland
+    domesticCompile(name: 'UPAdsSdk_3.0.06_domestic', ext: 'aar')
     domesticCompile(name: 'gdt_ads', ext: 'aar')
     domesticCompile(name: 'inmobi_ads', ext: 'aar')
     domesticCompile(name: 'mobvista_ads', ext: 'aar')
@@ -100,6 +98,31 @@ dependencies {
     domesticCompile(name: 'youlan_ads', ext: 'aar')
 
 
+    //foreign
+    foreignCompile(name: 'UPAdsSdk_3.0.06_foreign', ext: 'aar')
+    foreignCompile(name: 'adcolony_ads', ext: 'aar')
+    foreignCompile(name: 'amazon_ads', ext: 'aar')
+    foreignCompile(name: 'applovin_ads', ext: 'aar')
+    foreignCompile(name: 'appnext_ads', ext: 'aar')
+    foreignCompile(name: 'appnext_core', ext: 'aar')
+    foreignCompile(name: 'batmobi_ads', ext: 'aar')
+    foreignCompile(name: 'chartboost_ads', ext: 'aar')
+    foreignCompile(name: 'dap_ads_cw', ext: 'aar')
+    foreignCompile(name: 'dap_ads_vd', ext: 'aar')
+    foreignCompile(name: 'displayio_ads', ext: 'aar')
+
+    foreignCompile(name: 'facebook_ads', ext: 'aar')
+    foreignCompile(name: 'facebook_exo_player', ext: 'aar')
+    foreignCompile(name: 'ironsource_ads', ext: 'aar')
+    foreignCompile(name: 'mobpower_ads', ext: 'aar')
+    foreignCompile(name: 'mobvista_ads', ext: 'aar')
+    foreignCompile(name: 'palette-v7-26.1.0', ext: 'aar')
+    foreignCompile(name: 'playable_ads', ext: 'aar')
+    foreignCompile(name: 'tapjoy_ads', ext: 'aar')
+    foreignCompile(name: 'unity_ads', ext: 'aar')
+    foreignCompile(name: 'vungle_ads', ext: 'aar')
+    foreignCompile(name: 'youappi_ads', ext: 'aar')
+    foreignCompile 'com.google.android.gms:play-services-ads:16.0.0'
 
 
     compile 'com.android.support:support-v4:26.1.0'
@@ -107,7 +130,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
     //admob
-        compile 'com.google.android.gms:play-services-ads:16.0.0'
+
 // not importent
     compile 'com.android.support:design:26.0.0-alpha1'
 }

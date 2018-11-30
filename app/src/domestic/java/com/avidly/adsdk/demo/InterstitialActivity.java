@@ -22,7 +22,7 @@ public class InterstitialActivity extends Activity {
 	Button mButtonBBB;
 	Button mBtnDebugView;
 
-    private static  String interPlacementId="inter_aaa";
+    private static  String interPlacementId="sample_inter";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +34,12 @@ public class InterstitialActivity extends Activity {
 		final UPInterstitialLoadCallback callback = new UPInterstitialLoadCallback() {
 			@Override
 			public void onLoadSuccessed(String placement) {
-				Log.i(TAG, "sample_inter_foreign " + placement + " onLoadSuccessed:");
+				Log.i(TAG,   placement + " onLoadSuccessed:");
 
 			}
 			@Override
 			public void onLoadFailed(String placement) {
-				Log.i(TAG, "sample_inter_foreign " + placement + " onLoadFailed:");
+				Log.i(TAG, placement + " onLoadFailed:");
 			}
 		};
 

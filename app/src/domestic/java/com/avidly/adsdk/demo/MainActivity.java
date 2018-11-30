@@ -106,49 +106,49 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		//初始化banner
-
-		UPGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
-		// 添加回调接口
-		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("sample_banner_foreign", new UPBannerAdListener() {
-			@Override
-			public void onClicked() {
-				Log.i(TAG, "sample_banner_foreign onClicked ");
-			}
-
-			@Override
-			public void onDisplayed() {
-				Log.i(TAG, "sample_banner_foreign onDisplayed ");
-			}
-		});
-		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_bbb", new UPBannerAdListener() {
-			@Override
-			public void onClicked() {
-				Log.i(TAG, "banner_bbb onClicked ");
-			}
-
-			@Override
-			public void onDisplayed() {
-				Log.i(TAG, "banner_bbb onDisplayed ");
-			}
-		});
+//		//初始化banner
+//
+//		UPGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
+//		// 添加回调接口
+//		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("sample_banner_foreign", new UPBannerAdListener() {
+//			@Override
+//			public void onClicked() {
+//				Log.i(TAG, "sample_banner_foreign onClicked ");
+//			}
+//
+//			@Override
+//			public void onDisplayed() {
+//				Log.i(TAG, "sample_banner_foreign onDisplayed ");
+//			}
+//		});
+//		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_bbb", new UPBannerAdListener() {
+//			@Override
+//			public void onClicked() {
+//				Log.i(TAG, "banner_bbb onClicked ");
+//			}
+//
+//			@Override
+//			public void onDisplayed() {
+//				Log.i(TAG, "banner_bbb onDisplayed ");
+//			}
+//		});
 //        UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
 
-		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
-			@Override
-			public void run() {
-//				UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
-
-			}
-		}, 1000);
-
-		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
-			@Override
-			public void run() {
-
-				UPGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("sample_banner_foreign");
-			}
-		}, 1000);
+//		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
+//			@Override
+//			public void run() {
+////				UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
+//
+//			}
+//		}, 1000);
+//
+//		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
+//			@Override
+//			public void run() {
+//
+//				UPGameEasyBannerWrapper.getInstance().showBottomBannerAtADPlaceId("sample_banner_foreign");
+//			}
+//		}, 1000);
 
 	}
 
