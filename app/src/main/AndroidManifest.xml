@@ -21,11 +21,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/meh"
         android:label="${APPNAME}">
-        <!--<provider-->
-            <!--android:name="com.duapps.ad.stats.DuAdCacheProvider"-->
-            <!--android:authorities="${applicationId}.DuAdCacheProvider"-->
-            <!--android:exported="false">-->
-        <!--</provider>-->
+        <provider
+            android:name="com.duapps.ad.stats.DuAdCacheProvider"
+            android:authorities="${applicationId}.DuAdCacheProvider"
+            android:exported="false">
+        </provider>
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
