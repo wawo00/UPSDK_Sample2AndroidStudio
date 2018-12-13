@@ -22,7 +22,7 @@ public class InterstitialActivity extends Activity {
 	Button mButtonBBB;
 	Button mBtnDebugView;
 
-    private static  String interPlacementId="sample_inter";
+    private static  String interPlacementId="Interstitial0";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -6,7 +6,7 @@ android {
     buildToolsVersion '28.0.2'
 
     defaultConfig {
-        applicationId "adam.lean.foreign"
+        applicationId "com.zymobile.jewel.candy.cookie"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 3006
@@ -89,36 +89,25 @@ dependencies {
     //inland
     domesticCompile(name: 'UPAdsSdk_3.0.06_domestic', ext: 'aar')
     domesticCompile(name: 'gdt_ads', ext: 'aar')
-    domesticCompile(name: 'inmobi_ads', ext: 'aar')
     domesticCompile(name: 'mobvista_ads', ext: 'aar')
     domesticCompile(name: 'oneway_ads', ext: 'aar')
     domesticCompile(name: 'playable_ads', ext: 'aar')
     domesticCompile(name: 'toutiao_ads', ext: 'aar')
     domesticCompile(name: 'vungle_ads', ext: 'aar')
-    domesticCompile(name: 'youlan_ads', ext: 'aar')
-
+    domesticCompile(name: 'android-gif-drawable', ext:'aar')
 
     //foreign
     foreignCompile(name: 'UPAdsSdk_3.0.06_foreign', ext: 'aar')
     foreignCompile(name: 'adcolony_ads', ext: 'aar')
-    foreignCompile(name: 'amazon_ads', ext: 'aar')
     foreignCompile(name: 'applovin_ads', ext: 'aar')
-    foreignCompile(name: 'appnext_ads', ext: 'aar')
-    foreignCompile(name: 'appnext_core', ext: 'aar')
-    foreignCompile(name: 'batmobi_ads', ext: 'aar')
     foreignCompile(name: 'chartboost_ads', ext: 'aar')
-    foreignCompile(name: 'dap_ads_cw', ext: 'aar')
-    foreignCompile(name: 'dap_ads_vd', ext: 'aar')
     foreignCompile(name: 'displayio_ads', ext: 'aar')
 
     foreignCompile(name: 'facebook_ads', ext: 'aar')
     foreignCompile(name: 'facebook_exo_player', ext: 'aar')
     foreignCompile(name: 'ironsource_ads', ext: 'aar')
-    foreignCompile(name: 'mobpower_ads', ext: 'aar')
     foreignCompile(name: 'mobvista_ads', ext: 'aar')
-    foreignCompile(name: 'palette-v7-26.1.0', ext: 'aar')
     foreignCompile(name: 'playable_ads', ext: 'aar')
-    foreignCompile(name: 'tapjoy_ads', ext: 'aar')
     foreignCompile(name: 'unity_ads', ext: 'aar')
     foreignCompile(name: 'vungle_ads', ext: 'aar')
     foreignCompile(name: 'youappi_ads', ext: 'aar')
