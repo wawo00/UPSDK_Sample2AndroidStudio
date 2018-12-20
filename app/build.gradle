@@ -75,7 +75,7 @@ repositories {
 }
 
 
-configurations {z
+configurations {
     domesticCompile
     foreignCompile
 }
@@ -95,6 +95,7 @@ dependencies {
         domesticCompile(name: 'toutiao_ads', ext: 'aar')
         domesticCompile(name: 'vungle_ads', ext: 'aar')
         domesticCompile(name: 'android-gif-drawable', ext:'aar')
+        domesticCompile 'pub.devrel:easypermissions:1.0.1'
 
         //foreign
         foreignCompile(name: 'UPAdsSdk_3.0.06_foreign', ext: 'aar')
