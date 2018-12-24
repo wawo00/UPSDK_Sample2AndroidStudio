@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class MyInterstitialActivity extends Activity {
     private static final String TAG = "AdsSdk_3005";
 
-    public String[] placementIds= {"inter_unity", "inter_applovin", "inter_facebook", "inter_inmobi", "inter_batmobi", "_inter_admob_reward_interstitial", "inter_nend", "inter_ironsource",
+    public String[] placementIds= {"inter_unity", "inter_applovin", "inter_facebook", " ", "_inter_admob_reward_interstitial", "inter_nend", "inter_ironsource",
             "inter_mobvista",
             "inter_playableads", "inter_vk", "inter_admob", "inter_fbn", "inter_dap", "inter_vungle", "inter_aaa"};
 
