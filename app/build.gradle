@@ -18,6 +18,7 @@ android {
         ndk {
                 abiFilters 'armeabi-v7a'
             }
+
     }
     dexOptions {
         preDexLibraries false
@@ -103,11 +104,9 @@ dependencies {
     foreignCompile(name: 'applovin_ads', ext: 'aar')
     foreignCompile(name: 'chartboost_ads', ext: 'aar')
     foreignCompile(name: 'displayio_ads', ext: 'aar')
-
     foreignCompile(name: 'facebook_ads', ext: 'aar')
     foreignCompile(name: 'facebook_exo_player', ext: 'aar')
     foreignCompile(name: 'ironsource_ads', ext: 'aar')
-    foreignCompile(name: 'mobvista_ads', ext: 'aar')
     foreignCompile(name: 'playable_ads', ext: 'aar')
     foreignCompile(name: 'unity_ads', ext: 'aar')
     foreignCompile(name: 'vungle_ads', ext: 'aar')
