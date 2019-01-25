@@ -17,6 +17,7 @@ import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
+import com.up.ads.unity.BaseProxy;
 import com.up.ads.wrapper.banner.UPBannerAdListener;
 import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
 
@@ -260,11 +261,14 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		BaseProxy.onApplicationFocus(true);
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
+		BaseProxy.onApplicationFocus(false);
+
 	}
 
 	@Override

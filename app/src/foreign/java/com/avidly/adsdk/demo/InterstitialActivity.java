@@ -5,6 +5,7 @@ import com.avidly.ads.wrapper.interstitial.AvidlyInterstitialAdListener;
 import com.avidly.adsdk.demo.R;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.UPInterstitialAd;
+import com.up.ads.wrapper.interstitial.UPInterstitialAdListener;
 import com.up.ads.wrapper.interstitial.UPInterstitialLoadCallback;
 
 import android.app.Activity;
@@ -42,6 +43,23 @@ public class InterstitialActivity extends Activity {
 				Log.i(TAG, placement + " onLoadFailed:");
 			}
 		};
+
+		mInterstitialAdAAA.setUpInterstitialAdListener(new UPInterstitialAdListener() {
+			@Override
+			public void onClicked() {
+
+			}
+
+			@Override
+			public void onClosed() {
+
+			}
+
+			@Override
+			public void onDisplayed() {
+
+			}
+		});
 
 //展示
 		mInterstitialAdAAA.load(callback);

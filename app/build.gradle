@@ -6,7 +6,7 @@ android {
     buildToolsVersion '28.0.2'
 
     defaultConfig {
-        applicationId "com.zymobile.jewel.candy.cookie"
+        applicationId "com.aaa.bbb.ccc"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 3006
@@ -100,28 +100,29 @@ dependencies {
 
         //foreign
         foreignCompile(name: 'UPAdsSdk_3.0.06_foreign', ext: 'aar')
-    foreignCompile(name: 'adcolony_ads', ext: 'aar')
-    foreignCompile(name: 'applovin_ads', ext: 'aar')
-    foreignCompile(name: 'chartboost_ads', ext: 'aar')
-    foreignCompile(name: 'displayio_ads', ext: 'aar')
-    foreignCompile(name: 'facebook_ads', ext: 'aar')
-    foreignCompile(name: 'facebook_exo_player', ext: 'aar')
-    foreignCompile(name: 'ironsource_ads', ext: 'aar')
-    foreignCompile(name: 'playable_ads', ext: 'aar')
-    foreignCompile(name: 'unity_ads', ext: 'aar')
-    foreignCompile(name: 'vungle_ads', ext: 'aar')
-    foreignCompile(name: 'youappi_ads', ext: 'aar')
-    foreignCompile 'com.google.android.gms:play-services-ads:16.0.0'
+        foreignCompile(name: 'adcolony_ads', ext: 'aar')
+        foreignCompile(name: 'applovin_ads', ext: 'aar')
+        foreignCompile(name: 'chartboost_ads', ext: 'aar')
+        foreignCompile(name: 'facebook_ads', ext: 'aar')
+        foreignCompile(name: 'facebook_exo_player', ext: 'aar')
+        foreignCompile(name: 'ironsource_ads', ext: 'aar')
+        foreignCompile(name: 'playable_ads', ext: 'aar')
+        foreignCompile(name: 'unity_ads', ext: 'aar')
+        foreignCompile(name: 'vungle_ads', ext: 'aar')
+        foreignCompile 'com.google.android.gms:play-services-ads:16.0.0'
+//    foreignCompile 'com.facebook.android:audience-network-sdk:5.+'
 
 
-    compile 'com.android.support:support-v4:26.1.0'
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'com.android.support:multidex:1.0.1'
-    //admob
+        compile 'com.android.support:support-v4:26.1.0'
+        compile 'com.android.support:appcompat-v7:26.1.0'
+        compile 'com.android.support:recyclerview-v7:26.1.0'
+        compile 'com.android.support:multidex:1.0.1'
+
+
+        //admob
 
 // not importent
-    compile 'com.android.support:design:26.0.0-alpha1'
+        compile 'com.android.support:design:26.0.0-alpha1'
 }
 
 
