@@ -90,7 +90,7 @@ dependencies {
         //inland
         domesticCompile(name: 'UPAdsSdk_3.0.06_domestic', ext: 'aar')
         domesticCompile(name: 'gdt_ads', ext: 'aar')
-        domesticCompile(name: 'mobvista_ads', ext: 'aar')
+        domesticCompile(name: 'mintegral_ads', ext: 'aar')
         domesticCompile(name: 'oneway_ads', ext: 'aar')
         domesticCompile(name: 'playable_ads', ext: 'aar')
         domesticCompile(name: 'toutiao_ads', ext: 'aar')
@@ -109,7 +109,6 @@ dependencies {
         foreignCompile(name: 'playable_ads', ext: 'aar')
         foreignCompile(name: 'unity_ads', ext: 'aar')
         foreignCompile(name: 'vungle_ads', ext: 'aar')
-        foreign
 //    foreignCompile 'com.facebook.android:audience-network-sdk:5.+'
 
 
