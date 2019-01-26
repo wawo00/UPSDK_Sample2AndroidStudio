@@ -109,7 +109,7 @@ dependencies {
         foreignCompile(name: 'playable_ads', ext: 'aar')
         foreignCompile(name: 'unity_ads', ext: 'aar')
         foreignCompile(name: 'vungle_ads', ext: 'aar')
-        foreignCompile 'com.google.android.gms:play-services-ads:16.0.0'
+        foreign
 //    foreignCompile 'com.facebook.android:audience-network-sdk:5.+'
 
 
