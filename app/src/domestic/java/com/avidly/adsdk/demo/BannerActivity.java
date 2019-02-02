@@ -12,13 +12,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class BannerActivity extends Activity {
 	private static final String TAG = "upsdk_demo";
 
-	private static final String bannerPlacementId="sample_banner";
-
+	private static final String bannerPlacementId="eTDIH64F3HHjTq";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,7 +41,6 @@ public class BannerActivity extends Activity {
 
 //        UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
 
-
 		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
 			@Override
 			public void run() {
@@ -55,4 +56,6 @@ public class BannerActivity extends Activity {
 		super.onDestroy();
 		UPGameEasyBannerWrapper.getInstance().removeGameBannerAtADPlaceId(bannerPlacementId);
 	}
+
+
 }
