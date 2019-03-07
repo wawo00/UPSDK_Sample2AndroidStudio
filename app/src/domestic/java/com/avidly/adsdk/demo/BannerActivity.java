@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class BannerActivity extends Activity {
 	private static final String TAG = "upsdk_demo";
 
-	private static final String bannerPlacementId="eTDIH64F3HHjTq";
+	private static final String bannerPlacementId="sample_banner";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

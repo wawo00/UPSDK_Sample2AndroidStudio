@@ -197,3 +197,23 @@
 -keep class com.amazon.device.ads.** { *; }
 # amazon end
 
+# sigmob
+-dontwarn android.support.v4.**
+-keep class android.support.v4.** { *; }
+-keep interface android.support.v4.** { *; }
+-keep public class * extends android.support.v4.**
+-keep class sun.misc.Unsafe { *; }
+-dontwarn com.sigmob.**
+-keep class com.sigmob.**.**{*;}
+# sigmob end
+
+# baidumob
+-keepclassmembers class * extends android.app.Activity {
+			public void *(android.view.View);
+}
+-keepclassmembers enum * {
+				public static **[] values();
+				public static ** valueOf(java.lang.String);
+}
+-keep class com.baidu.mobads.*.** { *; }
+# baidumob end
