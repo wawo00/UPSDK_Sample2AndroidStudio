@@ -117,9 +117,9 @@ dependencies {
     //使用定制的admob 16.5.0
     foreignCompile(name: 'play-services-ads-16.5.0', ext: 'aar')
     foreignCompile(name: 'play-services-ads-base-16.5.0', ext: 'aar')
-    foreignCompile(name: 'play-services-ads-identifier-16.0.0', ext: 'aar')
+    foreignCompile(name: 'play-services-ads-identifier-15.0.1', ext: 'aar')
     foreignCompile(name: 'play-services-ads-lite-16.5.0', ext: 'aar')
-    foreignCompile(name: 'play-services-basement-16.0.1', ext: 'aar')
+    foreignCompile(name: 'play-services-basement-15.0.1', ext: 'aar')
     foreignCompile(name: 'play-services-gass-16.5.0', ext: 'aar')
 
     compile 'com.android.support:support-v4:26.1.0'
