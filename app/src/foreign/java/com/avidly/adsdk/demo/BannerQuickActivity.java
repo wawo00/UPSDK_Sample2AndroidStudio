@@ -14,7 +14,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.LinearLayout;
 
-public class BannerActivity extends Activity {
+public class BannerQuickActivity extends Activity {
 	private static final String TAG = "upsdk_demo";
 
 	private static final String bannerPlacementId="sample_banner";

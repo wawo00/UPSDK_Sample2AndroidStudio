@@ -16,7 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="Banner广告" />
+        android:text="Banner广告_custom" />
+    <Button
+        android:id="@+id/btnBannerQuick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Banner广告_quick" />
 
     <Button
         android:id="@+id/btnInterstitial"

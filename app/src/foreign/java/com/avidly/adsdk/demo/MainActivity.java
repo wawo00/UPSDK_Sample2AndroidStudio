@@ -1,31 +1,24 @@
 package com.avidly.adsdk.demo;
 
 import android.app.Activity;
-import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 import com.up.ads.unity.BaseProxy;
-import com.up.ads.wrapper.banner.UPBannerAdListener;
 import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
 
 public class MainActivity extends Activity {
 	private static final String TAG = "AdsSdk_demo";
      TextView tv_version;
 	Button btnRwardVideo;
-	Button btnBanner;
+	Button btnBanner,btnBannerQuick;
 	Button btnInterstitial;
 	Button btnExit,btnGetAbTest,btnShowDebug;
 
@@ -49,10 +42,19 @@ public class MainActivity extends Activity {
 		tv_version= (TextView)findViewById(R.id.tv_version);
 		tv_version.setText(VersionUtil.getVersionName(this));
 		btnBanner = (Button) findViewById(R.id.btnBanner);
+		btnBannerQuick=findViewById(R.id.btnBannerQuick);
+
 		btnBanner.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, BannerActivity.class);
+				Intent intent = new Intent(MainActivity.this, BannerCustomActivity.class);
+				startActivity(intent);
+			}
+		});
+		btnBannerQuick.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(MainActivity.this, BannerQuickActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -261,13 +263,13 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		BaseProxy.onApplicationFocus(true);
+//        UPAdsSdk.onApplicationResume();
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
-		BaseProxy.onApplicationFocus(false);
+//		UPAdsSdk.onApplicationPause();
 
 	}
 

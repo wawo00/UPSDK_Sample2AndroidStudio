@@ -164,4 +164,17 @@ public class VideoActivity extends Activity {
 //			}
 //		}
 //	}
+@Override
+protected void onResume() {
+	super.onResume();
+//        UPAdsSdk.onApplicationResume();
+}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+//		UPAdsSdk.onApplicationPause();
+
+	}
+
 }

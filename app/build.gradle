@@ -9,8 +9,8 @@ android {
         applicationId "com.aaa.bbb.ccc"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 3006
-        versionName "3.0.0.6"
+        versionCode 3007
+        versionName "3.0.0.7"
         multiDexEnabled true
 
 //        manifestPlaceholders = [APPNAME: "UPSDK-Demo"]
@@ -86,23 +86,24 @@ dependencies {
     //    compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])
     //support-libs
     compile(name: 'gson-2.7', ext: 'jar')
-
+    compile(name: 'glide-3.7.0', ext: 'jar')
     //inland
-    domesticCompile(name: 'UPAdsSdk_3.0.06_domestic', ext: 'aar')
+    domesticCompile(name: 'UPAdsSdk_3.0.07_domestic', ext: 'aar')
     domesticCompile(name: 'gdt_ads', ext: 'aar')
     domesticCompile(name: 'mintegral_ads', ext: 'aar')
     domesticCompile(name: 'oneway_ads', ext: 'aar')
     domesticCompile(name: 'playable_ads', ext: 'aar')
-    domesticCompile(name: 'toutiao_ads', ext: 'aar')
+//    domesticCompile(name: 'toutiao_ads', ext: 'aar')
     domesticCompile(name: 'vungle_ads', ext: 'aar')
     domesticCompile(name: 'android-gif-drawable', ext: 'aar')
     //30067新增的两个联盟
     domesticCompile(name: 'sigmob_ads',ext:'aar')
     domesticCompile(name: 'baidu_ads',ext:'aar')
     domesticCompile 'pub.devrel:easypermissions:1.0.1'
+    domesticCompile(name: 'open_ad_sdk', ext: 'aar')
 
     //foreign
-    foreignCompile(name: 'UPAdsSdk_3.0.06_foreign', ext: 'aar')
+    foreignCompile(name: 'UPAdsSdk_3.0.07_foreign', ext: 'aar')
     foreignCompile(name: 'adcolony_ads', ext: 'aar')
     foreignCompile(name: 'applovin_ads', ext: 'aar')
     foreignCompile(name: 'chartboost_ads', ext: 'aar')
@@ -117,9 +118,9 @@ dependencies {
     //使用定制的admob 16.5.0
     foreignCompile(name: 'play-services-ads-16.5.0', ext: 'aar')
     foreignCompile(name: 'play-services-ads-base-16.5.0', ext: 'aar')
-    foreignCompile(name: 'play-services-ads-identifier-16.0.0', ext: 'aar')
+    foreignCompile(name: 'play-services-ads-identifier-15.0.1', ext: 'aar')
     foreignCompile(name: 'play-services-ads-lite-16.5.0', ext: 'aar')
-    foreignCompile(name: 'play-services-basement-16.0.1', ext: 'aar')
+    foreignCompile(name: 'play-services-basement-15.0.1', ext: 'aar')
     foreignCompile(name: 'play-services-gass-16.5.0', ext: 'aar')
 
     compile 'com.android.support:support-v4:26.1.0'
