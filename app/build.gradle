@@ -93,14 +93,13 @@ dependencies {
     domesticCompile(name: 'mintegral_ads', ext: 'aar')
     domesticCompile(name: 'oneway_ads', ext: 'aar')
     domesticCompile(name: 'playable_ads', ext: 'aar')
-//    domesticCompile(name: 'toutiao_ads', ext: 'aar')
+    domesticCompile(name: 'toutiao_ads', ext: 'aar')
     domesticCompile(name: 'vungle_ads', ext: 'aar')
     domesticCompile(name: 'android-gif-drawable', ext: 'aar')
     //30067新增的两个联盟
     domesticCompile(name: 'sigmob_ads',ext:'aar')
     domesticCompile(name: 'baidu_ads',ext:'aar')
     domesticCompile 'pub.devrel:easypermissions:1.0.1'
-    domesticCompile(name: 'open_ad_sdk', ext: 'aar')
 
     //foreign
     foreignCompile(name: 'UPAdsSdk_3.0.07_foreign', ext: 'aar')
