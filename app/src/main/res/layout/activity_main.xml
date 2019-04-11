@@ -3,59 +3,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
+
     <TextView
         android:id="@+id/tv_version"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
+        android:layout_margin="5dp"
         android:gravity="center"
-        android:textSize="20dp" />
+        android:textSize="10dp" />
 
     <Button
         android:id="@+id/btnBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="Banner广告_custom" />
     <Button
         android:id="@+id/btnBannerQuick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="Banner广告_quick" />
 
     <Button
         android:id="@+id/btnInterstitial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="插屏广告" />
 
     <Button
         android:id="@+id/btnRwardVideo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="视频广告" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="退出广告" />
 
     <Button
         android:id="@+id/btnGetAbTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="获得Abtest数据" />
 
     <Button
         android:id="@+id/btnShowDebug"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:text="show Debug" />
+    <Button
+        android:id="@+id/btnShowIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="show Icon" />
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/icon_container"
+        ></RelativeLayout>
 </LinearLayout>

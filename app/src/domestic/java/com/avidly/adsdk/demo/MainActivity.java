@@ -14,12 +14,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
 import com.up.ads.UPAdsSdk;
+import com.up.ads.UPIconAd;
 import com.up.ads.tool.AccessPrivacyInfoManager;
+import com.up.ads.wrapper.icon.UPIconAdListener;
+
 import java.util.List;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
@@ -31,15 +35,16 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 	private static final String TAG = "upsdk_demo";
 	TextView tv_version;
 	Button btnRwardVideo;
-	Button btnBanner;
+	Button btnBanner,btnBannerQuick;
 	Button btnInterstitial;
-	Button btnExit,btnGetAbTest,btnShowDebug;
+	Button btnExit,btnGetAbTest,btnShowDebug,btnShowIcon;
 	private static final String[] WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE=
 			{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE,Manifest.permission.REQUEST_INSTALL_PACKAGES};
 	private static final int RC_WRITE_EXTERNAL_STORAGE = 111;
 	private static final int RC_READ_PHONE_STATE = 112;
 	private static final int RC_REQUEST_INSTALL_PACKAGES = 113;
-
+	RelativeLayout icon_container;
+	boolean iconIsReady=false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,10 +58,22 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		tv_version= (TextView)findViewById(R.id.tv_version);
 		tv_version.setText(VersionUtil.getVersionName(this));
 		btnBanner = (Button) findViewById(R.id.btnBanner);
+		btnBannerQuick=findViewById(R.id.btnBannerQuick);
+				btnShowIcon=findViewById(R.id.btnShowIcon);
+		//icon使用的填充布局
+		icon_container=findViewById(R.id.icon_container);
+		btnBannerQuick.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(MainActivity.this, BannerCustomActivity.class);
+				startActivity(intent);
+
+			}
+		});
 		btnBanner.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, BannerActivity.class);
+				Intent intent = new Intent(MainActivity.this, BannerQuickActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -98,6 +115,46 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 				Log.i(TAG, "abtestResult0 : "+abtestResult0+" ----abtestResult1: "+abtestResult1);
 			}
 		});
+
+
+		final UPIconAd iconAd = new UPIconAd(this);
+		iconAd.setUpIconAdListener(new UPIconAdListener() {
+			@Override
+			public void onLoadSuccessed() {
+				Log.i(TAG, "icon onLoadSuccessed");
+
+				iconIsReady=true;
+			}
+
+			@Override
+			public void onLoadFailed() {
+				Log.i(TAG, "icon onLoadFailed");
+				Toast.makeText(MainActivity.this, "icon load failed", Toast.LENGTH_SHORT).show();
+			}
+
+			@Override
+			public void onClicked() {
+				Log.i(TAG, "icon onClicked");
+			}
+
+			@Override
+			public void onDisplayed() {
+				Log.i(TAG, "icon onDisplayed");
+			}
+		});
+		iconAd.loadIconAd();
+		btnShowIcon.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if (iconIsReady){
+					iconAd.showIconAd(icon_container,0);
+				}else{
+					Toast.makeText(MainActivity.this, "Icon还没有准备好", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+
+
 
 	}
 

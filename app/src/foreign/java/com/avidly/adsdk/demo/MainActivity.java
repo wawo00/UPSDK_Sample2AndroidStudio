@@ -6,13 +6,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avidly.adsdk.demo.util.VersionUtil;
 import com.up.ads.UPAdsSdk;
+import com.up.ads.UPIconAd;
 import com.up.ads.tool.AccessPrivacyInfoManager;
 import com.up.ads.unity.BaseProxy;
 import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
+import com.up.ads.wrapper.icon.UPIconAdListener;
 
 public class MainActivity extends Activity {
 	private static final String TAG = "AdsSdk_demo";
@@ -20,8 +25,9 @@ public class MainActivity extends Activity {
 	Button btnRwardVideo;
 	Button btnBanner,btnBannerQuick;
 	Button btnInterstitial;
-	Button btnExit,btnGetAbTest,btnShowDebug;
-
+	Button btnExit,btnGetAbTest,btnShowDebug,btnShowIcon;
+    RelativeLayout icon_container;
+    boolean iconIsReady=false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,6 +49,11 @@ public class MainActivity extends Activity {
 		tv_version.setText(VersionUtil.getVersionName(this));
 		btnBanner = (Button) findViewById(R.id.btnBanner);
 		btnBannerQuick=findViewById(R.id.btnBannerQuick);
+		btnShowIcon=findViewById(R.id.btnShowIcon);
+        //icon使用的填充布局
+		icon_container=findViewById(R.id.icon_container);
+
+
 
 		btnBanner.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -109,42 +120,43 @@ public class MainActivity extends Activity {
 			}
 		});
 
-//		//初始化banner
-//
-//		UPGameEasyBannerWrapper.getInstance().initGameBannerWithActivity(this);
-//		// 添加回调接口
-//		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("sample_banner_foreign", new UPBannerAdListener() {
-//			@Override
-//			public void onClicked() {
-//				Log.i(TAG, "sample_banner_foreign onClicked ");
-//			}
-//
-//			@Override
-//			public void onDisplayed() {
-//				Log.i(TAG, "sample_banner_foreign onDisplayed ");
-//			}
-//		});
-//		UPGameEasyBannerWrapper.getInstance().addBannerCallbackAtADPlaceId("banner_bbb", new UPBannerAdListener() {
-//			@Override
-//			public void onClicked() {
-//				Log.i(TAG, "banner_bbb onClicked ");
-//			}
-//
-//			@Override
-//			public void onDisplayed() {
-//				Log.i(TAG, "banner_bbb onDisplayed ");
-//			}
-//		});
-//        UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
+		final UPIconAd iconAd = new UPIconAd(this);
+		iconAd.setUpIconAdListener(new UPIconAdListener() {
+			@Override
+			public void onLoadSuccessed() {
+				Log.i(TAG, "icon onLoadSuccessed");
 
-//		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
-//			@Override
-//			public void run() {
-////				UPGameEasyBannerWrapper.getInstance().showTopBannerAtADPlaceId("banner_aaa");
-//
-//			}
-//		}, 1000);
-//
+				iconIsReady=true;
+			}
+
+			@Override
+			public void onLoadFailed() {
+				Log.i(TAG, "icon onLoadFailed");
+				Toast.makeText(MainActivity.this, "icon load failed", Toast.LENGTH_SHORT).show();
+			}
+
+			@Override
+			public void onClicked() {
+				Log.i(TAG, "icon onClicked");
+			}
+
+			@Override
+			public void onDisplayed() {
+				Log.i(TAG, "icon onDisplayed");
+			}
+		});
+		iconAd.loadIconAd();
+		btnShowIcon.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if (iconIsReady){
+					iconAd.showIconAd(icon_container,0);
+				}else{
+					Toast.makeText(MainActivity.this, "Icon还没有准备好", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+
 //		(new Handler(Looper.getMainLooper())).postDelayed(new Runnable() {
 //			@Override
 //			public void run() {
@@ -276,5 +288,31 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onStop() {
 		super.onStop();
+	}
+
+	public void showIcon(){
+		final UPIconAd iconAd = new UPIconAd(this);
+		iconAd.setUpIconAdListener(new UPIconAdListener() {
+			@Override
+			public void onLoadSuccessed() {
+				Log.i(TAG, "icon onLoadSuccessed");
+				iconAd.showIconAd(icon_container,0);
+			}
+
+			@Override
+			public void onLoadFailed() {
+				Log.i(TAG, "icon onLoadFailed");
+			}
+
+			@Override
+			public void onClicked() {
+				Log.i(TAG, "icon onClicked");
+			}
+
+			@Override
+			public void onDisplayed() {
+				Log.i(TAG, "icon onDisplayed");
+			}
+		});
 	}
 }

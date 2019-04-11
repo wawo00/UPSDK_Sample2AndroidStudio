@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class InterstitialActivity extends Activity {
 	private static final String TAG = "upsdk_demo";
@@ -22,7 +23,7 @@ public class InterstitialActivity extends Activity {
 	Button mButtonBBB;
 	Button mBtnDebugView;
 
-    private static  String interPlacementId="sample_inter";
+    private static  String interPlacementId="Interstitial_home";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,9 @@ public class InterstitialActivity extends Activity {
 			public void onClick(View view) {
 				if (mInterstitialAdAAA != null && mInterstitialAdAAA.isReady()) {
 					mInterstitialAdAAA.show();
+				}else{
+					Toast.makeText(InterstitialActivity.this, "插屏没有准备好", Toast.LENGTH_SHORT).show();
+
 				}
 			}
 		});

@@ -87,6 +87,7 @@ dependencies {
     //support-libs
     compile(name: 'gson-2.7', ext: 'jar')
     compile(name: 'glide-3.7.0', ext: 'jar')
+    compile(name:'playable_ads',ext:'aar')
     //inland
     domesticCompile(name: 'UPAdsSdk_3.0.07_domestic', ext: 'aar')
     domesticCompile(name: 'gdt_ads', ext: 'aar')
@@ -109,7 +110,6 @@ dependencies {
     foreignCompile(name: 'facebook_ads', ext: 'aar')
     foreignCompile(name: 'facebook_exo_player', ext: 'aar')
     foreignCompile(name: 'ironsource_ads', ext: 'aar')
-    foreignCompile(name: 'playable_ads', ext: 'aar')
     foreignCompile(name: 'unity_ads', ext: 'aar')
     foreignCompile(name: 'vungle_ads', ext: 'aar')
 //    foreignCompile 'com.google.android.gms:play-services-ads:16.5.0'  --用于30066及其之前
