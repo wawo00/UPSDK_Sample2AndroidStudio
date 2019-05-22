@@ -6,10 +6,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.avidly.ads.AvidlyAdsSdk;
 import com.avidly.adsdk.demo.util.VersionUtil;
+import com.baidu.mobads.AppActivity;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.UPIconAd;
 import com.up.ads.tool.AccessPrivacyInfoManager;
@@ -29,8 +34,13 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.REQUEST_INSTALL_PACKAGES;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+
+public class MainActivity extends AppCompatActivity  {
+	//implements EasyPermissions.PermissionCallbacks
 	public static final int RC_PHONE_STATE=3;
 	private static final String TAG = "upsdk_demo";
 	TextView tv_version;
@@ -53,7 +63,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 		requestPermissions();
 		//设置customid
 		UPAdsSdk.setCustomerId(GetAndroid(this));
-
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (ContextCompat.checkSelfPermission(MainActivity.this, WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+					|| ContextCompat.checkSelfPermission(MainActivity.this, REQUEST_INSTALL_PACKAGES) != PackageManager.PERMISSION_GRANTED
+					|| ContextCompat.checkSelfPermission(MainActivity.this, READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+				ActivityCompat.requestPermissions(MainActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, REQUEST_INSTALL_PACKAGES, READ_PHONE_STATE}, 001);
+			}
+		}
 		initUpAdsSdk();
 		tv_version= (TextView)findViewById(R.id.tv_version);
 		tv_version.setText(VersionUtil.getVersionName(this));
@@ -220,29 +236,33 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 	private boolean hasReadPhonePermission() {
 		return EasyPermissions.hasPermissions(this, Manifest.permission.READ_PHONE_STATE);
 	}
-	@Override
-	public void onRequestPermissionsResult(int requestCode,
-										   @NonNull String[] permissions,
-										   @NonNull int[] grantResults) {
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//	@Override
+//	public void onRequestPermissionsResult(int requestCode,
+//										   @NonNull String[] permissions,
+//										   @NonNull int[] grantResults) {
+//		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//
+//		// EasyPermissions handles the request result.
+//		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+//	}
 
-		// EasyPermissions handles the request result.
-		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-	}
-
-	@Override
-	public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
-		Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
-	}
-
-	@Override
-	public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
-		Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
-		// (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
-		// This will display a dialog directing them to enable the permission in app settings.
-		if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
-			new AppSettingsDialog.Builder(this).build().show();
-		}
-	}
+//	@Override
+//	public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+//		Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
+//	}
+//
+//	@Override
+//	public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+//		Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+//		// (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
+//		// This will display a dialog directing them to enable the permission in app settings.
+//		if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+//			new AppSettingsDialog.Builder(this).build().show();
+//		}
+//	}
+@Override
+public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+	super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+}
 
 }
