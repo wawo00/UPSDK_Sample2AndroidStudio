@@ -87,6 +87,7 @@
 -dontwarn sun.misc.**
 -dontwarn com.vungle.warren.**
 -dontwarn okio.**
+-dontwarn okhttp3.**
 -dontwarn retrofit2.**
 -dontwarn com.moat.**
 -dontwarn com.google.android.gms.ads.identifier.**
@@ -138,6 +139,9 @@
 # ironsource
 -keep class com.ironsource.mediationsdk.IronSource
 -keep class com.moat.** { *; }
+-dontwarn com.ironsource.mediationsdk.**
+-dontwarn com.ironsource.adapters.**
+-dontwarn com.moat.**
 -keepclassmembers class com.ironsource.sdk.controller.IronSourceWebView$JSInterface {
     public *;
 }
@@ -150,7 +154,6 @@
 -keep public class com.google.ads.** {
    public *;
 }
-
 -keep class com.ironsource.adapters.** { *;
 }
 # ironsource end
