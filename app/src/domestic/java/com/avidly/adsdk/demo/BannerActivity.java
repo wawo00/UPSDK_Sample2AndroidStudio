@@ -1,21 +1,13 @@
 package com.avidly.adsdk.demo;
 
-import com.avidly.ads.AvidlyBannerAd;
-import com.avidly.ads.AvidlyRectangleAd;
-import com.avidly.ads.wrapper.banner.AvidlyBannerAdListener;
-import com.avidly.adsdk.demo.R;
-import com.up.ads.wrapper.banner.UPBannerAdListener;
-import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+
+import com.up.ads.wrapper.banner.UPBannerAdListener;
+import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
 
 public class BannerActivity extends Activity {
 	private static final String TAG = "upsdk_demo";

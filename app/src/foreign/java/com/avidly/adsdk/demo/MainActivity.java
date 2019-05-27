@@ -98,8 +98,7 @@ public class MainActivity extends Activity {
 		btnExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, ExitActivity.class);
-				startActivity(intent);
+
 			}
 		});
 

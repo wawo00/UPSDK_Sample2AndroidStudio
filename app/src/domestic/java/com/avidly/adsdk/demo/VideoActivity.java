@@ -1,15 +1,6 @@
 package com.avidly.adsdk.demo;
 
-import com.avidly.ads.AvidlyRewardVideoAd;
-import com.avidly.ads.wrapper.video.AvidlyRewardVideoAdListener;
-import com.avidly.adsdk.demo.R;
-import com.up.ads.UPRewardVideoAd;
-import com.up.ads.wrapper.video.UPRewardVideoAdListener;
-import com.up.ads.wrapper.video.UPRewardVideoLoadCallback;
-
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -17,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.up.ads.UPRewardVideoAd;
+import com.up.ads.wrapper.video.UPRewardVideoAdListener;
+import com.up.ads.wrapper.video.UPRewardVideoLoadCallback;
 
 public class VideoActivity extends Activity {
 	private static final String TAG = "upsdk_demo";

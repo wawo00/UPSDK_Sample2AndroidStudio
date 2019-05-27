@@ -1,8 +1,6 @@
 package com.avidly.adsdk.demo;
 
-import com.avidly.ads.AvidlyRewardVideoAd;
-import com.avidly.ads.wrapper.video.AvidlyRewardVideoAdListener;
-import com.avidly.adsdk.demo.R;
+
 import com.up.ads.UPRewardVideoAd;
 import com.up.ads.wrapper.video.UPRewardVideoAdListener;
 import com.up.ads.wrapper.video.UPRewardVideoLoadCallback;

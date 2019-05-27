@@ -1,18 +1,14 @@
 package com.avidly.adsdk.demo;
 
-import com.avidly.ads.AvidlyInterstitialAd;
-import com.avidly.ads.wrapper.interstitial.AvidlyInterstitialAdListener;
-import com.avidly.adsdk.demo.R;
-import com.up.ads.UPAdsSdk;
-import com.up.ads.UPInterstitialAd;
-import com.up.ads.wrapper.interstitial.UPInterstitialLoadCallback;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.up.ads.UPInterstitialAd;
+import com.up.ads.wrapper.interstitial.UPInterstitialLoadCallback;
 
 public class InterstitialActivity extends Activity {
 	private static final String TAG = "upsdk_demo";

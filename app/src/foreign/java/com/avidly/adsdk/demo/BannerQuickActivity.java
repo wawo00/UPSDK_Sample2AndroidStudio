@@ -1,9 +1,6 @@
 package com.avidly.adsdk.demo;
 
-import com.avidly.ads.AvidlyBannerAd;
-import com.avidly.ads.AvidlyRectangleAd;
-import com.avidly.ads.wrapper.banner.AvidlyBannerAdListener;
-import com.avidly.adsdk.demo.R;
+
 import com.up.ads.wrapper.banner.UPBannerAdListener;
 import com.up.ads.wrapper.banner.UPGameEasyBannerWrapper;
 

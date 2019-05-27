@@ -1,16 +1,11 @@
 package com.avidly.adsdk.demo;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -21,17 +16,13 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.avidly.ads.AvidlyAdsSdk;
+
 import com.avidly.adsdk.demo.util.VersionUtil;
-import com.baidu.mobads.AppActivity;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.UPIconAd;
-import com.up.ads.tool.AccessPrivacyInfoManager;
 import com.up.ads.wrapper.icon.UPIconAdListener;
 
-import java.util.List;
 import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
@@ -117,8 +108,7 @@ public class MainActivity extends AppCompatActivity  {
 		btnExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, ExitActivity.class);
-				startActivity(intent);
+
 			}
 		});
 

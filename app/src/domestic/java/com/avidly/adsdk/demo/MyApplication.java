@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Build;
 import android.support.multidex.MultiDex;
 
-import com.avidly.ads.AvidlyAdsSdk;
 
 /**
  * Created by Holaverse on 2017/3/30.
