@@ -57,6 +57,7 @@ android {
 
         foreign {//国外
             applicationId "adam.lean.foreign"
+//            applicationId "com.mikehill.tanchishelaizhan"
 //            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versionCode}+"AdsDemo"];
             manifestPlaceholders = [APPNAME: "${defaultConfig.versionCode}" + "Demo-foreign"];
 
@@ -111,6 +112,7 @@ dependencies {
     foreignCompile(name: 'ironsource_ads', ext: 'aar')
     foreignCompile(name: 'unity_ads', ext: 'aar')
     foreignCompile(name: 'vungle_ads', ext: 'aar')
+    foreignCompile(name: 'toutiao_ads', ext: 'aar')
 //    foreignCompile 'com.google.android.gms:play-services-ads:16.5.0'  --用于30066及其之前
 
     //使用定制的admob 17.2.0
