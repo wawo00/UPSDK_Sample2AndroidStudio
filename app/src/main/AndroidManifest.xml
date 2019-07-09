@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-   android:versionName=""
-    android:versionCode=""
     package="com.avidly.adsdk.demo">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -60,11 +58,11 @@
             <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
             <!--android:screenOrientation="portrait"-->
             <!--android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
-        <activity
-            android:name=".ExitActivity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.Light" />
+        <!--<activity-->
+            <!--android:name=".ExitActivity"-->
+            <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Holo.Light" />-->
 
         <activity android:name=".ShowDebugActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"

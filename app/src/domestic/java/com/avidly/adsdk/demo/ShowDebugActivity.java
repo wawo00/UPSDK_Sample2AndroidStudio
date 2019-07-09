@@ -13,58 +13,78 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class ShowDebugActivity extends AppCompatActivity {
-  Button btnDebugInter,btnDebugVideo;
+    Button btnDebugInter, btnDebugVideo;
     TextInputEditText etPackageName;
-  String packageName="";
+    String packageName = "";
+    String avidlyRewardVideoName="com.avidly.ads.debug.AvidlyRewardVideoDebugActivity";
+    String upRewardVideoName="com.up.ads.debug.UPRewardVideoDebugActivity";
+    String avidlyInterName="com.avidly.ads.debug.AvidlyInterstitialDebugActivity";
+    String upInterName="com.up.ads.debug.UPInterstitialDebugActivity";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_debug);
-        etPackageName=findViewById(R.id.et_packageName);
-        btnDebugInter=findViewById(R.id.btn_debug_inter);
-        btnDebugVideo=findViewById(R.id.btn_debug_video);
+        etPackageName = findViewById(R.id.et_packageName);
+        btnDebugInter = findViewById(R.id.btn_debug_inter);
+        btnDebugVideo = findViewById(R.id.btn_debug_video);
 
         btnDebugVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                packageName=etPackageName.getText().toString().trim();
-                startOtherActivity(packageName,"com.avidly.ads.debug.AvidlyRewardVideoDebugActivity");
+                packageName = etPackageName.getText().toString().trim();
+                showRewardVideo(packageName);
             }
         });
 
         btnDebugInter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                packageName=etPackageName.getText().toString().trim();
-                startOtherActivity(packageName,"com.avidly.ads.debug.AvidlyInterstitialDebugActivity");
+                packageName = etPackageName.getText().toString().trim();
+                showInter(packageName);
             }
         });
 
     }
 
-    public void startOtherActivity(String packageName,String activityName){
-        if (packageName.equals("")){
+    public boolean startOtherActivity(String packageName, String activityName) {
+        if (packageName.equals("")) {
             Toast.makeText(this, "缺少包名", Toast.LENGTH_SHORT).show();
-            return;
-        }else
-        {
+            return false;
+        } else {
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
-            ComponentName cn = new ComponentName(packageName,activityName);
+            ComponentName cn = new ComponentName(packageName, activityName);
             intent.setComponent(cn);
             try {
                 ShowDebugActivity.this.startActivity(intent);
-            }catch (Exception e){
-                if (e.getMessage().contains("Unable to find")){
-
-                    Toast.makeText(this, "no this app", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(this, "error"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                return true;
+            } catch (Exception e) {
+                if (e.getMessage().contains("Unable to find")) {
+                    Toast.makeText(this, "no this app---"+activityName, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "error" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                return false;
+
 
             }
         }
     }
+
+    public void showRewardVideo(String packageName){
+        if (!startOtherActivity(packageName,avidlyRewardVideoName)){
+            startOtherActivity(packageName,upRewardVideoName);
+        }
+    }
+
+    public void showInter(String packageName){
+        if (!startOtherActivity(packageName,avidlyInterName)){
+            startOtherActivity(packageName,upInterName);
+        }
+    }
+
 
 
 }

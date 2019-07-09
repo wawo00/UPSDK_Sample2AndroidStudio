@@ -1,3 +1,5 @@
+# 不做预校验，preverify是proguard的四个步骤之一，Android不需要preverify，去掉这一步能够加快混淆速度。
+-dontpreverify
 
 # avidly
 -keep class com.avidly.ads.** {*;}
