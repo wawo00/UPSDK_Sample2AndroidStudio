@@ -38,7 +38,7 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-foreign.pro'
         }
 
@@ -57,10 +57,11 @@ android {
 
         foreign {//国外
             applicationId "adam.lean.foreign"
+//            applicationId "com.balls.blast.ballshooter"
 //            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versionCode}+"AdsDemo"];
             manifestPlaceholders = [APPNAME: "${defaultConfig.versionCode}" + "Demo-foreign"];
-
             proguardFile 'proguard-rules-foreign.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-foreign.pro'
         }
 
         mintegral {//国外mintegral&tt
@@ -78,7 +79,7 @@ android {
 
 repositories {
     flatDir {
-        dirs 'libs', 'ads_domestic', 'ads_foreign','ads_foreign_tt_mintegral', 'gms-17.2.0'
+        dirs 'libs', 'ads_domestic', 'ads_foreign', 'ads_foreign_tt_mintegral', 'gms-17.2.0'
     }
 }
 
@@ -95,14 +96,18 @@ dependencies {
     //support-libs
     compile(name: 'gson-2.7', ext: 'jar')
     compile(name: 'glide-3.7.0', ext: 'jar')
-    compile(name: 'android-query-full.0.26.7', ext: 'jar')
+
     compile(name: 'playable_ads', ext: 'aar')
     //inland
+
     domesticCompile(name: 'UPAdsSdk_3.0.07.6_domestic', ext: 'aar')
     domesticCompile(name: 'gdt_ads', ext: 'aar')
     domesticCompile(name: 'mintegral_ads', ext: 'aar')
     domesticCompile(name: 'oneway_ads', ext: 'aar')
     domesticCompile(name: 'toutiao_ads', ext: 'aar')
+    //头条依赖的联盟
+    domesticCompile(name: 'android-query-full.0.26.7', ext: 'jar')
+
     domesticCompile(name: 'vungle_ads', ext: 'aar')
     domesticCompile(name: 'android-gif-drawable', ext: 'aar')
     //30067新增的两个联盟
@@ -121,6 +126,7 @@ dependencies {
     foreignCompile(name: 'unity_ads', ext: 'aar')
     foreignCompile(name: 'playable_ads', ext: 'aar')
     foreignCompile(name: 'vungle_ads', ext: 'aar')
+
 //    foreignCompile 'com.google.android.gms:play-services-ads:16.5.0'  --用于30066及其之前
     //使用定制的admob 17.2.0
     foreignCompile(name: 'play-services-ads-17.2.0', ext: 'aar')
@@ -152,7 +158,6 @@ dependencies {
     compile 'com.android.support:customtabs:28.0.0'
     compile 'com.android.support:cardview-v7:28.0.0'
     compile 'com.android.support:multidex:1.0.1'
-
 
 // not importent
     compile 'com.android.support:design:28.0.0'

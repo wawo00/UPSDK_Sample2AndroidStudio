@@ -20,6 +20,8 @@
 -dontwarn com.avidly.**
 -dontwarn com.up.**
 -keep class com.statistics.channel.* {*;}
+-keep class com.google.ads.mediation.** {*;}
+-dontwarn com.google.ads.mediation.**
 # avidly end
 
 # support
@@ -67,8 +69,6 @@
 -keep class com.google.android.gms.common.** {*;}
 -dontwarn com.google.android.gms.**
 -dontwarn com.google.protobuf.**
--keep class com.google.ads.mediation.** {*;}
--dontwarn com.google.ads.mediation.**
 # google end
 
 # adcolony
@@ -169,3 +169,11 @@
 # amazon
 -keep class com.amazon.device.ads.** { *; }
 # amazon end
+
+# toutiao
+-keep class com.bytedance.sdk.openadsdk.** { *; }
+-keep class com.androidquery.callback.** {*;}
+-dontwarn com.bytedance.sdk.**
+-dontwarn com.androidquery.**
+-dontwarn com.ss.android.**
+# toutiao end
