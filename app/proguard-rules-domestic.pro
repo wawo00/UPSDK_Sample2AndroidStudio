@@ -20,6 +20,8 @@
 -dontwarn com.avidly.**
 -dontwarn com.up.**
 -keep class com.statistics.channel.* {*;}
+-keep class com.google.ads.mediation.** {*;}
+-dontwarn com.google.ads.mediation.**
 # avidly end
 
 # support
