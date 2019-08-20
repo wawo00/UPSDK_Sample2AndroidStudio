@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.aaa.bbb.ccc"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 3007
         versionName "3.0.0.7"
@@ -15,7 +15,7 @@ android {
 
 
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a','armeabi', 'x86'
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'armeabi', 'x86'
         }
 
     }
@@ -78,7 +78,7 @@ android {
 
 repositories {
     flatDir {
-        dirs 'libs', 'ads_domestic', 'ads_foreign', 'ads_foreign_tt_mintegral', 'gms-17.2.0','support_library'
+        dirs 'libs', 'ads_domestic', 'ads_foreign', 'ads_foreign_tt_mintegral', 'gms-17.2.0', 'support_library'
     }
 }
 
@@ -95,7 +95,7 @@ dependencies {
     //support-libs
     compile(name: 'gson-2.7', ext: 'jar')
     compile(name: 'glide-3.7.0', ext: 'jar')
-
+    compile(name: 'eventbus-3.1.1', ext: 'jar')
     compile(name: 'playable_ads', ext: 'aar')
     //inland
 
@@ -107,7 +107,7 @@ dependencies {
     //头条依赖的联盟
     domesticCompile(name: 'android-query-full.0.26.7', ext: 'jar')
 
-    domesticCompile(name: 'vungle_ads', ext: 'aar')
+    domesticCompile(name: 'vungle_ads_6.4.11', ext: 'aar')
     domesticCompile(name: 'android-gif-drawable', ext: 'aar')
     //30067新增的两个联盟
     domesticCompile(name: 'sigmob_ads', ext: 'aar')
@@ -115,7 +115,7 @@ dependencies {
     domesticCompile 'pub.devrel:easypermissions:1.0.1'
 
     //foreign
-    foreignCompile(name: 'UPAdsSdk_3.0.07.6_foreign', ext: 'aar')
+    foreignCompile(name: 'UPAdsSdk_3.0.07.7_foreign', ext: 'aar')
     foreignCompile(name: 'adcolony_ads', ext: 'aar')
     foreignCompile(name: 'applovin_ads', ext: 'aar')
     foreignCompile(name: 'chartboost_ads', ext: 'aar')
@@ -123,20 +123,24 @@ dependencies {
     foreignCompile(name: 'facebook_exo_player', ext: 'aar')
     foreignCompile(name: 'ironsource_ads', ext: 'aar')
     foreignCompile(name: 'unity_ads', ext: 'aar')
-    foreignCompile(name: 'playable_ads', ext: 'aar')
-    foreignCompile(name: 'vungle_ads', ext: 'aar')
-
+//    foreignCompile(name: 'playable_ads', ext: 'aar')
+    foreignCompile(name: 'vungle_ads_6.4.11', ext: 'aar')
+//    foreignCompile 'com.tapjoy:tapjoy-android-sdk:12.3.1'
 //    foreignCompile 'com.google.android.gms:play-services-ads:16.5.0'  --用于30066及其之前
-    //使用定制的admob 17.2.0
-    foreignCompile(name: 'play-services-ads-17.2.0', ext: 'aar')
-    foreignCompile(name: 'play-services-ads-base-17.2.0', ext: 'aar')
-    foreignCompile(name: 'play-services-ads-identifier-16.0.0', ext: 'aar')
-    foreignCompile(name: 'play-services-ads-lite-17.2.0', ext: 'aar')
-    foreignCompile(name: 'play-services-basement-16.0.1', ext: 'aar')
-    foreignCompile(name: 'play-services-gass-17.2.0', ext: 'aar')
-    foreignCompile(name: 'play-services-measurement-base-16.3.0', ext: 'aar')
-    foreignCompile(name: 'play-services-measurement-sdk-api-16.3.0', ext: 'aar')
+    //admob
 
+    foreignCompile 'com.google.android.gms:play-services-ads:17.2.0'
+
+    //使用定制的admob 17.2.0
+
+//    foreignCompile(name: 'play-services-ads-17.2.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-ads-base-17.2.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-ads-identifier-16.0.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-ads-lite-17.2.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-basement-16.0.1', ext: 'aar')
+//    foreignCompile(name: 'play-services-gass-17.2.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-measurement-base-16.3.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-measurement-sdk-api-16.3.0', ext: 'aar')
     //mintegral
     mintegralCompile(name: 'UPAdsSdk_3.0.07.6_tt_mintegral', ext: 'aar')
     mintegralCompile(name: 'adcolony_ads', ext: 'aar')
@@ -147,13 +151,10 @@ dependencies {
     mintegralCompile(name: 'playable_ads', ext: 'aar')
     mintegralCompile(name: 'toutiao_ads', ext: 'aar')
     mintegralCompile(name: 'unity_ads', ext: 'aar')
-    mintegralCompile(name: 'vungle_ads', ext: 'aar')
-
+    mintegralCompile(name: 'vungle_ads_6.4.11', ext: 'aar')
 //support library
-
 //    implementation fileTree(include: '*.jar', dir: 'libs/android_support_library')
 //    implementation fileTree(include: '*.aar', dir: 'libs/android_support_library')
-
     compile 'com.android.support:support-v4:28.0.0'
     compile 'com.android.support:appcompat-v7:28.0.0'
     compile 'com.android.support:recyclerview-v7:28.0.0'

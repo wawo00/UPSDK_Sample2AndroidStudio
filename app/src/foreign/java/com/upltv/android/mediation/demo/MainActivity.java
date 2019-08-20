@@ -249,7 +249,9 @@ public class MainActivity extends Activity {
 	 */
 	 public void initSdkAndGDPR()
 	 {
+
 		 UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneForeign);
+		 UPAdsSdk.setIsChild(true);
 		 //开启ironsource的log
 //		 IronSource.setAdaptersDebug(true);
 		 UPAdsSdk.initAbtConfigJson("wt_8080", true, 100, "avidly", "M", 80, new String[]{"tag1", "tag2"});
