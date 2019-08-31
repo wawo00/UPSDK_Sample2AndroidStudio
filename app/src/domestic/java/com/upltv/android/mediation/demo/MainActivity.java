@@ -22,8 +22,6 @@ import com.up.ads.UPIconAd;
 import com.up.ads.wrapper.icon.UPIconAdListener;
 import com.upltv.android.mediation.demo.util.VersionUtil;
 
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.EasyPermissions;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.REQUEST_INSTALL_PACKAGES;
@@ -51,7 +49,6 @@ public class MainActivity extends AppCompatActivity  {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		UPAdsSdk.setDebuggable(true);
-		requestPermissions();
 		//设置customid
 		UPAdsSdk.setCustomerId(GetAndroid(this));
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -197,35 +194,7 @@ public class MainActivity extends AppCompatActivity  {
 		return androidId;
 	}
 
-	@AfterPermissionGranted(RC_WRITE_EXTERNAL_STORAGE)
-	public void requestPermissions() {
-		if (hasAllPermissions()) {
-			// Have permission, do the thing!
-			Toast.makeText(this, "TODO:获得所有需要的权限了", Toast.LENGTH_LONG).show();
-		} else {
-			// Ask for one permission
-			EasyPermissions.requestPermissions(
-					this,
-					"需要以下权限",
-					RC_WRITE_EXTERNAL_STORAGE,
-					RC_PHONE_STATE,
-					RC_REQUEST_INSTALL_PACKAGES,
-					WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE
-			);
-		}
-	}
 
-	private boolean hasWriteExteralPermission() {
-		return EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-	}
-
-	private boolean hasAllPermissions() {
-		return EasyPermissions.hasPermissions(this, WRITE_EXTERNALWithREQUEST_INSTALL_PACKAGESWithREAD_PHONE_STATE);
-	}
-
-	private boolean hasReadPhonePermission() {
-		return EasyPermissions.hasPermissions(this, Manifest.permission.READ_PHONE_STATE);
-	}
 //	@Override
 //	public void onRequestPermissionsResult(int requestCode,
 //										   @NonNull String[] permissions,

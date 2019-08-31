@@ -3,19 +3,19 @@ apply plugin: 'com.android.application'
 android {
 
     compileSdkVersion 28
-    buildToolsVersion '28.0.2'
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.aaa.bbb.ccc"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3007
-        versionName "3.0.0.7"
+        versionCode 3008
+        versionName "3.0.0.8"
         multiDexEnabled true
 
 
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a', 'armeabi', 'x86'
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
 
     }
@@ -41,6 +41,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-foreign.pro'
         }
 
+        debug {
+            signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-foreign.pro'
+        }
+
     }
 
 
@@ -55,6 +60,7 @@ android {
         }
 
         foreign {//国外
+//            applicationId "com.chillyroom.happy"
             applicationId "adam.lean.foreign"
 //            applicationId "bling.crush.match3.free.android"
 //            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versionCode}+"AdsDemo"];
@@ -93,77 +99,72 @@ configurations {
 dependencies {
     //    compile fileTree(dir: 'libs', include: ['*.jar','*.aar'])
     //support-libs
-    compile(name: 'gson-2.7', ext: 'jar')
-    compile(name: 'glide-3.7.0', ext: 'jar')
-    compile(name: 'eventbus-3.1.1', ext: 'jar')
-    compile(name: 'playable_ads', ext: 'aar')
+    implementation(name: 'gson-2.7', ext: 'jar')
+    implementation(name: 'glide-3.7.0', ext: 'jar')
+    implementation(name: 'eventbus-3.1.1', ext: 'jar')
     //inland
-
-    domesticCompile(name: 'UPAdsSdk_3.0.07.6_domestic', ext: 'aar')
-    domesticCompile(name: 'gdt_ads', ext: 'aar')
-    domesticCompile(name: 'mintegral_ads', ext: 'aar')
-    domesticCompile(name: 'oneway_ads', ext: 'aar')
-    domesticCompile(name: 'toutiao_ads', ext: 'aar')
+    domesticImplementation(name: 'UPAdsSdk_3008.2_domestic', ext: 'aar')
+    domesticImplementation(name: 'gdt_ads', ext: 'aar')
+    domesticImplementation(name: 'mintegral_ads', ext: 'aar')
+    domesticImplementation(name: 'vungle_ads', ext: 'aar')
+    domesticImplementation(name: 'oneway_ads', ext: 'aar')
+    domesticImplementation(name: 'toutiao_ads', ext: 'aar')
     //头条依赖的联盟
-    domesticCompile(name: 'android-query-full.0.26.7', ext: 'jar')
-
-    domesticCompile(name: 'vungle_ads_6.4.11', ext: 'aar')
-    domesticCompile(name: 'android-gif-drawable', ext: 'aar')
+    domesticImplementation(name: 'android-query-full.0.26.7', ext: 'jar')
+    domesticImplementation(name: 'android-gif-drawable', ext: 'aar')
     //30067新增的两个联盟
-    domesticCompile(name: 'sigmob_ads', ext: 'aar')
-    domesticCompile(name: 'baidu_ads', ext: 'aar')
-    domesticCompile 'pub.devrel:easypermissions:1.0.1'
+    domesticImplementation(name: 'sigmob_ads', ext: 'aar')
+    domesticImplementation(name: 'baidu_ads', ext: 'aar')
 
     //foreign
-    foreignCompile(name: 'UPAdsSdk_3.0.07.7_foreign', ext: 'aar')
-    foreignCompile(name: 'adcolony_ads', ext: 'aar')
-    foreignCompile(name: 'applovin_ads', ext: 'aar')
-    foreignCompile(name: 'chartboost_ads', ext: 'aar')
-    foreignCompile(name: 'facebook_ads', ext: 'aar')
-    foreignCompile(name: 'facebook_exo_player', ext: 'aar')
-    foreignCompile(name: 'ironsource_ads', ext: 'aar')
-    foreignCompile(name: 'unity_ads', ext: 'aar')
-//    foreignCompile(name: 'playable_ads', ext: 'aar')
-    foreignCompile(name: 'vungle_ads_6.4.11', ext: 'aar')
+    foreignImplementation(name: 'UPAdsSdk_3008.3_foreign', ext: 'aar')
+    foreignImplementation(name: 'adcolony_ads', ext: 'aar')
+    foreignImplementation(name: 'applovin_ads', ext: 'aar')
+    foreignImplementation(name: 'chartboost_ads', ext: 'aar')
+    foreignImplementation(name: 'facebook_ads', ext: 'aar')
+    foreignImplementation(name: 'facebook_exo_player', ext: 'aar')
+    foreignImplementation(name: 'ironsource_ads', ext: 'aar')
+    foreignImplementation(name: 'unity_ads', ext: 'aar')
+    foreignImplementation(name: 'vungle_ads', ext: 'aar')
+
 //    foreignCompile 'com.tapjoy:tapjoy-android-sdk:12.3.1'
 //    foreignCompile 'com.google.android.gms:play-services-ads:16.5.0'  --用于30066及其之前
     //admob
-
-    foreignCompile 'com.google.android.gms:play-services-ads:17.2.0'
+//    foreignCompile 'com.google.android.gms:play-services-auth:16.0.1'
+    foreignImplementation 'com.google.android.gms:play-services-ads:17.2.0'
 
     //使用定制的admob 17.2.0
 
 //    foreignCompile(name: 'play-services-ads-17.2.0', ext: 'aar')
 //    foreignCompile(name: 'play-services-ads-base-17.2.0', ext: 'aar')
-//    foreignCompile(name: 'play-services-ads-identifier-16.0.0', ext: 'aar')
+//    foreignCompile(name: 'play-services-ads-idenmtifier-16.0.0', ext: 'aar')
 //    foreignCompile(name: 'play-services-ads-lite-17.2.0', ext: 'aar')
 //    foreignCompile(name: 'play-services-basement-16.0.1', ext: 'aar')
 //    foreignCompile(name: 'play-services-gass-17.2.0', ext: 'aar')
 //    foreignCompile(name: 'play-services-measurement-base-16.3.0', ext: 'aar')
 //    foreignCompile(name: 'play-services-measurement-sdk-api-16.3.0', ext: 'aar')
     //mintegral
-    mintegralCompile(name: 'UPAdsSdk_3.0.07.6_tt_mintegral', ext: 'aar')
-    mintegralCompile(name: 'adcolony_ads', ext: 'aar')
-    mintegralCompile(name: 'android-gif-drawable', ext: 'aar')
-    mintegralCompile(name: 'applovin_ads', ext: 'aar')
-    mintegralCompile(name: 'ironsource_ads', ext: 'aar')
-    mintegralCompile(name: 'mintegral_ads', ext: 'aar')
-    mintegralCompile(name: 'playable_ads', ext: 'aar')
-    mintegralCompile(name: 'toutiao_ads', ext: 'aar')
-    mintegralCompile(name: 'unity_ads', ext: 'aar')
-    mintegralCompile(name: 'vungle_ads_6.4.11', ext: 'aar')
+    mintegralImplementation(name: 'UPAdsSdk_3.0.08.1_tt', ext: 'aar')
+    mintegralImplementation(name: 'adcolony_ads', ext: 'aar')
+    mintegralImplementation(name: 'android-gif-drawable', ext: 'aar')
+    mintegralImplementation(name: 'applovin_ads', ext: 'aar')
+    mintegralImplementation(name: 'ironsource_ads', ext: 'aar')
+    mintegralImplementation(name: 'mintegral_ads', ext: 'aar')
+    mintegralImplementation(name: 'toutiao_ads', ext: 'aar')
+    mintegralImplementation(name: 'unity_ads', ext: 'aar')
+    mintegralImplementation(name: 'vungle_ads', ext: 'aar')
 //support library
 //    implementation fileTree(include: '*.jar', dir: 'libs/android_support_library')
 //    implementation fileTree(include: '*.aar', dir: 'libs/android_support_library')
-    compile 'com.android.support:support-v4:28.0.0'
-    compile 'com.android.support:appcompat-v7:28.0.0'
-    compile 'com.android.support:recyclerview-v7:28.0.0'
-    compile 'com.android.support:customtabs:28.0.0'
-    compile 'com.android.support:cardview-v7:28.0.0'
-    compile 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:multidex:1.0.1'
 
 // not importent
-    compile 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
 }
 
 

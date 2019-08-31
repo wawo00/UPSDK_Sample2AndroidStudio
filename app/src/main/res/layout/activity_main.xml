@@ -55,6 +55,7 @@
         android:text="获得Abtest数据" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btnShowDebug"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,6 +67,47 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:text="show Icon" />
+    <CheckBox
+        android:id="@+id/ckBoxSetIsChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="是否是儿童" />
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_year"
+            android:hint="输入年份"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_month"
+            android:hint="输入月份"
+            />
+        <Button
+            android:onClick="setBirthday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnShowAge"
+        android:onClick="showAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="当前用户年龄" />
     <RelativeLayout
         android:layout_width="80dp"
         android:layout_height="80dp"
