@@ -110,8 +110,8 @@ dependencies {
     domesticImplementation(name: 'oneway_ads', ext: 'aar')
     domesticImplementation(name: 'toutiao_ads', ext: 'aar')
     //头条依赖的联盟
-    domesticImplementation(name: 'android-query-full.0.26.7', ext: 'jar')
-    domesticImplementation(name: 'android-gif-drawable', ext: 'aar')
+    domesticImplementation(name: 'toutiao-gif-drawable', ext: 'jar')
+    domesticImplementation(name: 'toutiao-query-full.0.26.7', ext: 'aar')
     //30067新增的两个联盟
     domesticImplementation(name: 'sigmob_ads', ext: 'aar')
     domesticImplementation(name: 'baidu_ads', ext: 'aar')
