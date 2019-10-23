@@ -37,13 +37,14 @@
         <activity
             android:name=".VideoActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:screenOrientation="portrait"
             android:launchMode="standard"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light" />
         <activity
             android:name=".BannerCustomActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             android:theme="@android:style/Theme.Holo.NoActionBar" />
         <activity
             android:name=".BannerQuickActivity"
@@ -56,19 +57,19 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light" />
         <!--<activity-->
-            <!--android:name=".BannerActivityForXiaomi"-->
-            <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
-            <!--android:screenOrientation="portrait"-->
-            <!--android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
+        <!--android:name=".BannerActivityForXiaomi"-->
+        <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
         <!--<activity-->
-            <!--android:name=".ExitActivity"-->
-            <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
-            <!--android:screenOrientation="portrait"-->
-            <!--android:theme="@android:style/Theme.Holo.Light" />-->
+        <!--android:name=".ExitActivity"-->
+        <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@android:style/Theme.Holo.Light" />-->
 
-        <activity android:name=".ShowDebugActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            ></activity>
+        <activity
+            android:name=".ShowDebugActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
 
 
     </application>

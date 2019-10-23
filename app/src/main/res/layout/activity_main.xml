@@ -108,6 +108,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:text="当前用户年龄" />
+    <Button
+        android:onClick="showAutoTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="自动测试" />
     <RelativeLayout
         android:layout_width="80dp"
         android:layout_height="80dp"

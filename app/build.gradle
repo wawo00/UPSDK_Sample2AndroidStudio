@@ -60,7 +60,7 @@ android {
         }
 
         foreign {//国外
-//            applicationId "com.chillyroom.happy"
+//            applicationId "com.bubble.free.bubblestory"
             applicationId "adam.lean.foreign"
 //            applicationId "bling.crush.match3.free.android"
 //            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versionCode}+"AdsDemo"];
@@ -117,7 +117,9 @@ dependencies {
     domesticImplementation(name: 'baidu_ads', ext: 'aar')
 
     //foreign
-    foreignImplementation(name: 'UPAdsSdk_3008.3_foreign', ext: 'aar')
+//    foreignImplementation(name: 'UPAdsSdk_3008.3_foreign', ext: 'aar')
+    foreignImplementation(name: 'UPAdsSdk_3008.5_foreign', ext: 'aar')
+
     foreignImplementation(name: 'adcolony_ads', ext: 'aar')
     foreignImplementation(name: 'applovin_ads', ext: 'aar')
     foreignImplementation(name: 'chartboost_ads', ext: 'aar')

@@ -53,12 +53,12 @@ public class MainActivity extends Activity {
         AccessPrivacyInfoManager.UPAccessPrivacyInfoStatusEnum result = UPAdsSdk.getAccessPrivacyInfoStatus(MainActivity.this);
 
 
-       new Handler().postDelayed(new Runnable() {
-           @Override
-           public void run() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
-           }
-       },3*1000);
+            }
+        }, 3 * 1000);
         initUpAdsSdk(result);
         initView();
         //icon使用的填充布局
@@ -188,11 +188,11 @@ public class MainActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    if (UPAdsSdk.isInited()){
+                    if (UPAdsSdk.isInited()) {
                         UPAdsSdk.setIsChild(b);
-                        showAsToast("coppa is "+b);
-                    }else{
-                        showAsToast( "请先初始化upsdk");
+                        showAsToast("coppa is " + b);
+                    } else {
+                        showAsToast("请先初始化upsdk");
                     }
                 }
             }
@@ -352,22 +352,26 @@ public class MainActivity extends Activity {
     }
 
     public void setBirthday(View view) {
-        String yearStr=et_year.getText().toString().trim();
-        String monthStr=et_month.getText().toString().trim();
-        if (!yearStr.equals("")&&!monthStr.equals("")){
-            UPAdsSdk.setBirthday(Integer.valueOf(yearStr),Integer.valueOf(monthStr));
-        }else{
+        String yearStr = et_year.getText().toString().trim();
+        String monthStr = et_month.getText().toString().trim();
+        if (!yearStr.equals("") && !monthStr.equals("")) {
+            UPAdsSdk.setBirthday(Integer.valueOf(yearStr), Integer.valueOf(monthStr));
+        } else {
             showAsToast("输入格式错误");
         }
     }
 
     public void showAge(View view) {
-        if (UPAdsSdk.isInited()){
-            showAsToast("当前用户年龄是"+UPAdsSdk.getAge());
+        if (UPAdsSdk.isInited()) {
+            showAsToast("当前用户年龄是" + UPAdsSdk.getAge());
         }
     }
 
-    public void showAsToast(String content){
+    public void showAsToast(String content) {
         Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showAutoTest(View view) {
+        UPAdsSdk.autoOneKeyInspect(this);
     }
 }
