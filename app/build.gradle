@@ -62,6 +62,7 @@ android {
         foreign {//国外
 //            applicationId "com.bubble.free.bubblestory"
             applicationId "adam.lean.foreign"
+//            applicationId "com.game.greedycandy.free"
 //            applicationId "bling.crush.match3.free.android"
 //            manifestPlaceholders =[APPNAME,"UPSDK-"+${defaultConfig.versionCode}+"AdsDemo"];
             manifestPlaceholders = [APPNAME: "${defaultConfig.versionCode}" + "Demo-foreign"];
@@ -103,22 +104,22 @@ dependencies {
     implementation(name: 'glide-3.7.0', ext: 'jar')
     implementation(name: 'eventbus-3.1.1', ext: 'jar')
     //inland
-    domesticImplementation(name: 'UPAdsSdk_3008.2_domestic', ext: 'aar')
+    domesticImplementation(name: 'UPAdsSdk_3008.5_domestic', ext: 'aar')
     domesticImplementation(name: 'gdt_ads', ext: 'aar')
     domesticImplementation(name: 'mintegral_ads', ext: 'aar')
     domesticImplementation(name: 'vungle_ads', ext: 'aar')
     domesticImplementation(name: 'oneway_ads', ext: 'aar')
     domesticImplementation(name: 'toutiao_ads', ext: 'aar')
     //头条依赖的联盟
-    domesticImplementation(name: 'android-query-full.0.26.7', ext: 'jar')
-    domesticImplementation(name: 'android-gif-drawable', ext: 'aar')
+    domesticImplementation(name: 'toutiao-query-full.0.26.7', ext: 'jar')
+    domesticImplementation(name: 'toutiao-gif-drawable', ext: 'aar')
     //30067新增的两个联盟
     domesticImplementation(name: 'sigmob_ads', ext: 'aar')
     domesticImplementation(name: 'baidu_ads', ext: 'aar')
 
     //foreign
 //    foreignImplementation(name: 'UPAdsSdk_3008.3_foreign', ext: 'aar')
-    foreignImplementation(name: 'UPAdsSdk_3008.5_foreign', ext: 'aar')
+    foreignImplementation(name: 'UPAdsSdk_3008.6', ext: 'aar')
 
     foreignImplementation(name: 'adcolony_ads', ext: 'aar')
     foreignImplementation(name: 'applovin_ads', ext: 'aar')
@@ -134,6 +135,9 @@ dependencies {
     //admob
 //    foreignCompile 'com.google.android.gms:play-services-auth:16.0.1'
     foreignImplementation 'com.google.android.gms:play-services-ads:17.2.0'
+
+    // 统计包3296
+    foreignImplementation(name: 'analysissdk-foreign_R3.2.0.6', ext: 'aar')
 
     //使用定制的admob 17.2.0
 

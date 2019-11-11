@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
+import android.support.annotation.MainThread;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aly.sdk.ALYAnalysis;
 import com.up.ads.UPAdsSdk;
 import com.up.ads.UPIconAd;
 import com.up.ads.tool.AccessPrivacyInfoManager;
@@ -35,6 +38,10 @@ public class MainActivity extends Activity {
     boolean iconIsReady = false;
     CheckBox ckBoxIsChild;
     EditText et_year, et_month;
+    // 用于统计包的测试，对应的是正式服务器上包名com.game.greedycandy.free
+    private String productid="1002457";
+    private String channelId="32400";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -281,14 +288,27 @@ public class MainActivity extends Activity {
      * 初始化GDPR
      */
     public void initSdkAndGDPR() {
-
-
+        // 初始化外部统计包
+//        testExtAly();
         UPAdsSdk.init(MainActivity.this, UPAdsSdk.UPAdsGlobalZone.UPAdsGlobalZoneForeign);
 //        UPAdsSdk.setIsChild(true);
         //开启ironsource的log
 //		 IronSource.setAdaptersDebug(true);
         UPAdsSdk.initAbtConfigJson("wt_8080", true, 100, "avidly", "M", 80, new String[]{"tag1", "tag2"});
 
+    }
+
+    private void testExtAly() {
+        ALYAnalysis.init(this,productid,channelId);
+        ALYAnalysis.setCustomerId("roy-testuser-00001");
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.i(TAG, "testExtAly: getOpenId : "+ALYAnalysis.getOpenId(MainActivity.this));
+                Log.i(TAG, "testExtAly: getUserId : "+ALYAnalysis.getUserId());
+
+            }
+        },2*1000);
     }
 
     @Override
@@ -310,13 +330,13 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-//        UPAdsSdk.onApplicationResume();
+        UPAdsSdk.onApplicationResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//		UPAdsSdk.onApplicationPause();
+		UPAdsSdk.onApplicationPause();
 
     }
 
@@ -373,5 +393,11 @@ public class MainActivity extends Activity {
 
     public void showAutoTest(View view) {
         UPAdsSdk.autoOneKeyInspect(this);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        UPAdsSdk.onAndroidBackKeyDown();
     }
 }
