@@ -1,7 +1,7 @@
 package com.upltv.android.mediation.demo;
 
 //import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ShowDebugActivity extends AppCompatActivity {
 //  Button btnDebugInter,btnDebugVideo;

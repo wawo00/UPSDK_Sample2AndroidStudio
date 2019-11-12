@@ -171,3 +171,20 @@
 # amazon
 -keep class com.amazon.device.ads.** { *; }
 # amazon end
+
+#eventbus start
+-keepclassmembers class * {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+
+#eventbus end
+
+#google gms identifier start
+-keep class com.google.android.gms.ads.identifier.** { *; }
+#google gms identifier end
