@@ -5,6 +5,9 @@ android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
 
+    publishNonDefault true
+    defaultPublishConfig "foreignDebug"
+
     defaultConfig {
         applicationId "com.aaa.bbb.ccc"
         minSdkVersion 16
