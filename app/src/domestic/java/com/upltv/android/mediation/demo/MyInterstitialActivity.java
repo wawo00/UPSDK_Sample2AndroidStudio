@@ -22,7 +22,7 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 
 public class MyInterstitialActivity extends Activity {
-    private static final String TAG = "AdsSdk_3005";
+    private static final String TAG = "AdsSdk_3008";
 
     public String[] placementIds= {"inter_unity", "inter_applovin", "inter_facebook", " ", "_inter_admob_reward_interstitial", "inter_nend", "inter_ironsource",
             "inter_mobvista",

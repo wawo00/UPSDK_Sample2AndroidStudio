@@ -22,6 +22,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/meh"
         android:label="${APPNAME}">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-0000000000000000~0000000000" />
 
         <activity
             android:name=".MainActivity"

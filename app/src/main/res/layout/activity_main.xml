@@ -13,18 +13,59 @@
         android:gravity="center"
         android:textSize="10dp" />
 
-    <Button
-        android:id="@+id/btnBanner"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="Banner广告_custom" />
-    <Button
-        android:id="@+id/btnBannerQuick"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="showCustomBanner"
+            android:text="Banner_custom" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="hideCustomBanner"
+            android:text="hide" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="hideCustomBanner"
+            android:text="remove" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="Banner广告_quick" />
+        android:orientation="horizontal"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="showQuickBanner"
+            android:text="Banner_quick" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="hideQuickBanner"
+            android:text="hide" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="removeQuickBanner"
+            android:text="remove" />
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btnInterstitial"
@@ -40,12 +81,6 @@
         android:layout_margin="2dp"
         android:text="视频广告" />
 
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="退出广告" />
 
     <Button
         android:id="@+id/btnGetAbTest"
@@ -108,9 +143,24 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:text="当前用户年龄" />
+    <Button
+        android:onClick="autoOneKeyInspect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:text="自检操作" />
     <RelativeLayout
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/icon_container"
         ></RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
 </LinearLayout>

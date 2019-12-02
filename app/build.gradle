@@ -9,8 +9,8 @@ android {
         applicationId "com.aaa.bbb.ccc"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3008
-        versionName "3.0.0.8"
+        versionCode 3009
+        versionName "3.0.0.9"
         multiDexEnabled true
 
 
@@ -37,7 +37,7 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-foreign.pro'
         }
 
@@ -102,30 +102,33 @@ dependencies {
     implementation(name: 'gson-2.7', ext: 'jar')
     implementation(name: 'glide-3.7.0', ext: 'jar')
     implementation(name: 'eventbus-3.1.1', ext: 'jar')
+    implementation(name: 'AF-Android-SDK', ext: 'jar')
+
     //inland
-    domesticImplementation(name: 'UPAdsSdk_3008.3_domestic', ext: 'aar')
-    domesticImplementation(name: 'gdt_ads', ext: 'aar')
-    domesticImplementation(name: 'mintegral_ads', ext: 'aar')
-    domesticImplementation(name: 'vungle_ads', ext: 'aar')
-    domesticImplementation(name: 'oneway_ads', ext: 'aar')
-    domesticImplementation(name: 'toutiao_ads', ext: 'aar')
-    //头条依赖的联盟
-    domesticImplementation(name: 'toutiao-gif-drawable', ext: 'jar')
-    domesticImplementation(name: 'toutiao-query-full.0.26.7', ext: 'aar')
-    //30067新增的两个联盟
-    domesticImplementation(name: 'sigmob_ads', ext: 'aar')
-    domesticImplementation(name: 'baidu_ads', ext: 'aar')
+//    domesticImplementation(name: 'UPAdsSdk_3009.1', ext: 'aar')
+//    domesticImplementation(name: 'gdt_ads', ext: 'aar')
+//    domesticImplementation(name: 'mintegral_ads', ext: 'aar')
+//    domesticImplementation(name: 'vungle_ads', ext: 'aar')
+//    domesticImplementation(name: 'oneway_ads', ext: 'aar')
+//    domesticImplementation(name: 'toutiao_ads', ext: 'aar')
+//    //头条依赖的联盟
+//    domesticImplementation(name: 'toutiao-gif-drawable', ext: 'jar')
+//    domesticImplementation(name: 'toutiao-query-full.0.26.7', ext: 'aar')
+//    //30067新增的两个联盟
+//    domesticImplementation(name: 'sigmob_ads', ext: 'aar')
+//    domesticImplementation(name: 'baidu_ads', ext: 'aar')
 
     //foreign
-    foreignImplementation(name: 'UPAdsSdk_3008.3_foreign', ext: 'aar')
+    foreignImplementation(name: 'UPAdsSdk_3009.2_foreign', ext: 'aar')
     foreignImplementation(name: 'adcolony_ads', ext: 'aar')
     foreignImplementation(name: 'applovin_ads', ext: 'aar')
     foreignImplementation(name: 'chartboost_ads', ext: 'aar')
-    foreignImplementation(name: 'facebook_ads', ext: 'aar')
-    foreignImplementation(name: 'facebook_exo_player', ext: 'aar')
+//    foreignImplementation(name: 'facebook_ads', ext: 'aar')
+//    foreignImplementation(name: 'facebook_exo_player', ext: 'aar')
     foreignImplementation(name: 'ironsource_ads', ext: 'aar')
     foreignImplementation(name: 'unity_ads', ext: 'aar')
     foreignImplementation(name: 'vungle_ads', ext: 'aar')
+    foreignImplementation 'com.facebook.android:audience-network-sdk:5.5.0'
 
 //    foreignCompile 'com.tapjoy:tapjoy-android-sdk:12.3.1'
 //    foreignCompile 'com.google.android.gms:play-services-ads:16.5.0'  --用于30066及其之前
